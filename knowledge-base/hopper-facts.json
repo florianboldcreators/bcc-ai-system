@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "person": "Julia Hopper",
+    "role": "Creative Lead / Concepter",
+    "extracted_from": "Slack messages (95K lines)",
+    "extraction_date": "2026-02-20",
+    "total_facts": 127
+  },
+  
+  "background": [
+    "Studierte Grafikdesignerin",
+    "Arbeitet bei BCC seit mindestens September 2025",
+    "Hat einen Hund namens Coco",
+    "Lebt in München / arbeitet remote",
+    "Nutzt MacBook (hatte Keynote-Zugriffsprobleme, PPT-Lizenz-Fragen)",
+    "Spricht fließend Englisch (schreibt auch englische Nachrichten)",
+    "War beim Barcelona Team Trip geplant (Mai 2025)",
+    "Hat am 9.5. um 10 Uhr einen wichtigen privaten Termin"
+  ],
+  
+  "clients": {
+    "porsche": [
+      "Arbeitet mit Kundin 'Hanna' zusammen",
+      "Nutzt Porsche SharePoint für Dateiaustausch",
+      "Erstellt Content für porsche.deutschland",
+      "Macht Weekly Highlights und Story Highlights",
+      "Arbeitet an #PorscheFamily Content",
+      "Kennt Porsche CI/Styleguide genau",
+      "Gipfeltreffen 2025 war wichtiges Event",
+      "Feedback-Prozesse bei Porsche sind 'schockierend'",
+      "Arbeitet eng mit Denise (Porsche) zusammen"
+    ],
+    "hisense_gorenje": [
+      "Leitet Hisense/Gorenje Account zusammen mit Mert",
+      "Erstellte Content Ideen basierend auf Content Säulen",
+      "Shooting-Planung für Highlight-Produkte",
+      "Braucht CI für beide Marken (Styleguide, Schriften, Farben)",
+      "TikTok Verification ist kritisch für Community Management 2026",
+      "Arbeitet mit Ray für Shootings in München",
+      "Modulare Küche und Mietstudio sind Konzept-Themen"
+    ],
+    "lidl": [
+      "Gibt Video-Feedback mit spezifischen Timestamps",
+      "Pixel-Feedback: 'nur pikante stellen verdeckt'",
+      "Rewind Sound-Effekt Konzepte",
+      "Video-Länge ist wichtiges Feedback-Thema"
+    ],
+    "decathlon": [
+      "Teil des Decathlon Pitch Teams",
+      "Präsentiert direkt nach Marvin",
+      "Bereitet eigene Präsentation vor"
+    ]
+  },
+  
+  "frameworks": [
+    "Erstellt Content Ideen basierend auf Content Säulen",
+    "Arbeitet mit Content Reihen - ein Format, mehrere Varianten",
+    "Scribbled Ideen erst runter bevor sie sie ausarbeitet",
+    "Legt Content mit Datum ab für Versionierung",
+    "Nutzt Canva für schnelle Post-Erstellung",
+    "Schreibt Captions parallel zur visuellen Erstellung",
+    "Macht 'WIP' Folien um Kunden zu zeigen dass etwas in Arbeit ist",
+    "Fragt Team nach kreativer Hilfe wenn sie feststeckt",
+    "Räumt Figma auf für saubere Übergaben",
+    "Nutzt Asana Tasks für Aufgaben-Tracking",
+    "Setzt Reminder in Asana",
+    "Exportiert Keynote zu PPT für Kunden-Kompatibilität",
+    "Gibt kreative Briefings mit Ton-Spectrum: 'Mittelweg von Matcha Latte zu Haftbefehl'",
+    "Referenziert Pop-Culture für Konzepte: 'Karte des Rumtreibers von Harry Potter'",
+    "Denkt in Posting-Reihen: 'Store Rundgang mit Animation und Stecknadel'",
+    "Plant Content nach Locations: 'Reihenfolge: Gardasee, Dolomiten, Sölden'",
+    "Formuliert Ideen aus bevor sie sie präsentiert: 'ich scribble es einfach mal runter'",
+    "Sagt wenn Ideen noch nicht ausgereift sind: 'die Ideen stellen wir nächstes mal vor'",
+    "Teilt Aufgaben klar auf: 'Dann schnapp ich mir den Rest der Ideen zum ausformulieren'",
+    "Unterscheidet zwischen Content-Streams: 'Hisense: Wohnungen + Models / Gorenje: Modulare Küche + Mietstudio'",
+    "Gibt Musik-Briefings: 'funny/Cartoon Music - falls du hier eine andere Idee hast, gerne'",
+    "Fragt nach Key Visuals: 'Wo finde ich das TINS Key Visual im Drive?'",
+    "Fragt nach historischem Content: 'Gibt es Content von Ferry Porsche den wir nutzen können?'",
+    "Denkt in Carousel-Formaten: 'Du kannst es auch als Info auf die Carousel Slides legen'",
+    "Nutzt Content-Säulen als Framework für Ideen-Entwicklung",
+    "Definiert Event-Content früh: 'Story Highlight für TINS visualisieren'",
+    "Strukturiert Feedback klar: 'Slide 2: Welches Video meint sie denn... Text noch etwas kürzen'",
+    "Gibt Alternativ-Vorschläge: 'Vllt lieber: Highlights am 13.09.2025'",
+    "Fragt nach Styleguide-Status bevor Deadline: 'bekommen wir bis Freitag einen aktuellen Stand?'"
+  ],
+  
+  "quality_bars": [
+    "Feedback muss strukturiert sein mit Bullet Points",
+    "Video-Feedback mit Timestamps und spezifischen Elementen",
+    "Typo immer gleiche Größe und Positionierung",
+    "Bildanschnitte: wenn schief, so croppen dass es ästhetisch aussieht",
+    "Pixel nur an 'pikanten Stellen', quasi 2 Balken",
+    "Würde kein unscharfes Bild hochladen als studierte Grafikdesignerin",
+    "Content soll sich nicht doppeln (logisch)",
+    "Schwarzblende als Video-Ending kann okay sein aber nicht immer",
+    "Bei Videos mit Stativ: Rush geht easy",
+    "Dunkle Thumbnails gehen nicht, auch nicht zum verlängern"
+  ],
+  
+  "style": {
+    "communication": [
+      "Nutzt :slightly_smiling_face: und :smile: sehr oft",
+      "Spricht Kollegen direkt mit Vornamen an",
+      "Sagt 'Dankeee' mit extra e's",
+      "Sagt 'alles guuut' mit extra u's",
+      "Gibt Kontext mit 'Als Background für...'",
+      "Formuliert höfliche Absagen: 'Ach mist, du Arme'",
+      "Macht Vorschläge statt Anweisungen: 'machen wir es uns einfach: X?'",
+      "Nutzt 'LG Juli' als Signatur",
+      "Schreibt professionelle Entschuldigungen bei Krankheit"
+    ],
+    "emotions": [
+      "Halbherzige Antworten/Infos machen sie 'wortwörtlich zum Stier'",
+      "Sagt 'ich dreh durch' bei Frustration",
+      "Sagt 'ich steh bissl neben mir' wenn overwhelmed",
+      "Nutzt 'puh ja, bin ich auch kein Fan von' für diplomatische Kritik",
+      "Sagt 'ob ichs Flo schon 15x gesagt hab?' bei wiederholten Themen"
+    ],
+    "humor": [
+      "Macht Witze über Porsche-Obsession: 'wir können ja beim essen den laptop aufhaben – porsche würde es lieben'",
+      "Selbstironie: 'ich will Teil der Kampagne sein' (als Joke)",
+      "Sarkasmus bei Feedback-Prozessen: 'aber gut, da wirds ja wohl kein feedback geben'"
+    ]
+  },
+  
+  "tools": [
+    "Frame.io für Video-Review",
+    "Picdrop für Foto-Sharing (z.B. roserbrothers)",
+    "Google Slides/Docs für Präsentationen",
+    "Canva für schnelle Visual-Erstellung",
+    "Porsche SharePoint für Kunden-Files",
+    "Figma für Design-Assets",
+    "Asana für Task-Management",
+    "Keynote (wenn Zugriff vorhanden)",
+    "PowerPoint für Kunden-Präsentationen",
+    "Adobe Rush für einfache Video-Edits mit Stativ-Material"
+  ],
+  
+  "relationships": {
+    "mert": [
+      "Enger Arbeitspartner für Hisense/Gorenje",
+      "Teilen sich Aufgaben: 'Mert wird euch schon vorstellen'",
+      "Schickt ihm Tasks direkt",
+      "Arbeiten oft gemeinsam an Präsentationen"
+    ],
+    "marie": [
+      "Bittet Marie um kreative Hilfe",
+      "Marie unterstützt bei Creator-Suche",
+      "Gibt Marie Feedback auf Arbeit",
+      "Freundlicher, supportiver Ton"
+    ],
+    "marvin": [
+      "Koordiniert Decathlon Pitch zusammen",
+      "Fragt Marvin zu Ads-Manager Themen",
+      "Arbeitet mit Marvin auf WhatsApp Gruppen"
+    ],
+    "florian": [
+      "Ruft Flo regelmäßig an für Abstimmung",
+      "Wartet oft auf Flo's Feedback",
+      "Sagt Dinge 'schon 15x' zu Flo",
+      "Flo gibt Input zu Konzept-Richtung ('eher Haftbefehl statt Matcha Latte')"
+    ],
+    "jana": [
+      "Übergabe von Jana bei Account-Wechsel",
+      "Fragt Jana nach Vorlagen und Prozessen",
+      "Koordiniert Ads-Manager Einführung mit Jana"
+    ]
+  },
+  
+  "opinions": [
+    "Feedback-Prozesse bei manchen Kunden sind 'schockierend'",
+    "Online-Bearbeitung ist 'echt so doof'",
+    "Halbherzige Infos sind frustrierend",
+    "Grid-Dateien die nicht funktionieren machen sie 'richtig sauer'",
+    "Porsche als Kunde ist sehr anspruchsvoll",
+    "Will dass Kunden sehen 'dass wir on top of things sind'",
+    "Effizienz ist wichtig: 'jede Slide schriftlich erklären ist gerade nicht effizient'",
+    "Prozesse müssen klar sein: 'Da muss ein Prozess her. Feedback gesammelt und ciao'"
+  ],
+  
+  "working_patterns": [
+    "Arbeitet auch wenn krank (aber meldet sich professionell ab)",
+    "Macht Lunch-Breaks wenn nötig (z.B. Tierarzt)",
+    "Ist flexibel mit Terminen: 'passt, ich bin flexibel'",
+    "Plant Büro-Treffen aktiv: 'hast du Lust dass wir uns mal im Büro treffen?'",
+    "Arbeitet abends/nachts wenn nötig",
+    "Macht Reminders in Tools wenn etwas offen ist",
+    "Ignoriert unwichtiges bewusst: 'ich ignorier schon so viel'"
+  ]
+}

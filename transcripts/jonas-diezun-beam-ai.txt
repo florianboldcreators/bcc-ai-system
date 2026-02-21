@@ -1,0 +1,948 @@
+Herzlich willkommen zum AI First Podcast. Heute zu Gast ist Jonas die zu der
+Gründe und CO von Biem einer KI-Agenten-Plattform, die selbstlärnte Agenten für
+Unternehmen bereitstellt. Wahrscheinlich das größte Thema in der KI-Welt, aktuell
+und deswegen freue ich mich Jonas, dass du hier bist und wir heute darüber sprechen können,
+wie ihr das Umsetzung, was ihr in den letzten Jahren darüber gelernt habt.
+Was hab ich dazu sein, Felix?
+Ich bin gespannt.
+Jonas, ihr seid ja schon ein bisschen vor der Zeit unterwegs als ihr Biem
+gegründet habt, 2022 und ich weiß noch, was du mir damals so von Euren etesen
+erzählt hast und da dachte ich damals schon so, okay, alle waren noch dabei, irgendwie zu
+lernen, wie man mit KI-Chat-Bots arbeitet und ihr habt schon ein bisschen weiter gedacht.
+Erzählen noch mal kurz so, was ist eure Gründung Story, welche
+Hypothesen habt ihr damals aufgestellt, über Agents?
+Ja, gerne, das waren ein bisschen längere Journey. Ich hab ja der Vorweise gut gemacht
+und dann waren wir am überlegen, okay, was baume jetzt als nächstes.
+Und welche Firma wollen wir bauen. Und ich hatte in 2015, 2016 damals
+Konuchs mit aufgebaut, wo wir eigentlich AI genutzt haben und Produkte für
+Analytics zu machen. Und das war damals auch noch sehr neu, ja, damit
+wir nur in Networks verwendet und wir haben damals aber schon so ein Verständnis entwickelt,
+dass AI sich exponentiell weiter entwickelt. Und damals war das super rudimentär,
+aber wir haben das genutzt um bestimmte Analytics besser zu machen.
+Und dann haben wir 2020, 2020 gesagt, na ja gut, wenn AI sich exponentiell entwickelt
+und damals gab es irgendwie GP3, das konnte jetzt schon irgendwie ganz gut anvorten geben und so.
+Dann wird irgendwann AI alles können, was Menschen auch können. Und wenn das der Fall
+ist, dann sollten wir das vielleicht einfach bauen, auch wenn das jetzt ein bisschen dauert,
+weil das wahrscheinlich ein ganz guter Markt sein wird.
+Und dann haben wir angefangen damals mit GP3 und zu spielen.
+Dann kamen Chat GP3 raus und dann haben wir gemerkt, na ja, okay, gut.
+Das irgendwie ganz nett, aber eigentlich wäre es jetzt ganz cool, wenn diese Entity,
+die wir damals konstruiert haben, auch Aufgaben löst und und so, ich arbeite abnimmt,
+ja und nicht nur irgendwie nett anvortet. Und dann haben wir angefangen,
+ihmel zu verschicken und irgendwie so kleine Aufgaben zu geben und hey plan mal
+irgendwie ein paar Schritte und das hat so funktioniert in Ansätzen, ja.
+Wir hatten Demos, die ein produktiven, die waren echt cool, die haben dann halt nicht in Produktion
+oder auch nicht dann sehr repidible, irgendwie funktioniert.
+Aber es war schon abzusehen, dass das cool sein kann.
+Und dann kam damals im März, 2023, das PayPal raus, Human Simulacra
+und dann haben alle über Agents oder dann Dingen solos mit Agents,
+haben wir gesagt, okay, wir machen jetzt einfach nur noch Agents.
+Ja, so nennt mir das jetzt Vollgas da drauf, mal schauen, wie lange das dauert
+und dann haben wir damit angefangen. Und dann war ich auch im Silicon Valley,
+haben wir mit Investoren und Leuten gerätet und alle so,
+aber hatte ich kein Stress, das dauert noch zwei bis fünf Jahre, ja,
+das ist noch nicht jemand, ja.
+Töne Art gehen dann doch irgendwie ein bisschen schneller und genau,
+aber seit dem bauen wir dran.
+Du war das damals, glaube ich, erzählt, dass es eigentlich so das,
+die letzte Firma, die waren überhaupt noch bauen muss,
+weil mit dem, was man dann darauf aufbauen kann, kann man wieder
+rum, alles andere bauen.
+Würdest du es?
+100% nicht, noch viel stärker sogar.
+Vor zwei, drei Jahren war das so eine Idee und wir haben gesagt,
+das wird wahrscheinlich so sein.
+Mittlerweile bin ich für ich felsend fest davon überzeugt und wir zeigen,
+dass jetzt auch in dem, was wir intern nutzen und was wir intern bauen.
+Zum Beispiel, ich habe mein eigenes CEO office gebaut,
+wo ich alle meine Prozesse automatisieren und alles um mich herumbauer.
+Und das ist jetzt nicht nur, dass ich mich selbst irgendwie in Versuche in der
+Eizugießen, sondern ich versuche quasi eine verbesserte Version von mir
+selbst in der Eizugießen.
+Und dann habe ich so einen Soundingboard.
+Ich habe Frank Slowtmen.
+Ich habe ganz viele Leute als AI-Personas, die mir auf alles, was ich machen
+Feedback gebe.
+Wenn ich jetzt nach diesem Podcast alleine gebe, dann heißt es wieder Jonas,
+das war eine gute Antwort, das war nicht so eine geile Antwort,
+nächstes Mal bitte das besser machen.
+Und jetzt ist es natürlich von da nicht mehr wahnsinnig weit weg,
+weil ich eigentlich nur noch der Executor der AI bin.
+Und wenn das der Fall ist, dann braucht man mich ja irgendwann nicht mehr
+außer vielleicht, um noch ein paar Hände zu schütteln.
+Insofern bin ich heute noch viel stärker davon überzeugt,
+dass es eigentlich die letzte Firma als die wir bauen.
+Wir machen dann nach, nochmal irgendwas anderes.
+Aber zumindest können wir das, was wir jetzt bauen,
+dann auch nutzen, um alles was wir in Zukunft bauen,
+bauen, wollen, zu bauen.
+Herr, um Kredebild zu sein, bei Euren Kunden,
+müsst ihr ja auch eure beste Kester die sein.
+Weil ich mal sagen, das ist zumindest, was wir hier immer bei uns versuchen
+und sage, wir müssen es halt selbst irgendwie radikal bei uns einsetzen
+und mit gutem Beispiel vorangehen.
+Und alles, was wir nicht verstehen und zeigen können,
+wo er sonst uns so Kunden wissen.
+Das stimmt, ich würde aber so ein bisschen die Einschreckung machen.
+Also vor ein, zwei Jahren, weil es alles so,
+du musstest Techmäßig extrem gut sein und alles verstehen.
+Und so sagen, hey, komm mal, ich hab hier was Neues,
+das versteht ihr noch nicht, aber wir können euch das beibringen
+und wir können das gemeinsam machen.
+Jetzt ist die Tech sowieso schon so weit,
+dass du eigentlich fast alles lösen kannst.
+Das heißt, technisch ist das gar nicht mehr so unfassbar interessant,
+sondern es geht jetzt viel mehr darum,
+wie bring ich das in Produktion und welchen Value heblich
+tatsächlich beim Kunden.
+Und was brauche ich dafür, um diesem Value zu heben.
+Und dieser Value ist dann halt nicht,
+am Ende des Bodlenäck ist nicht die Tech,
+wenn das Bodlenäck ist prozess wissen,
+das sind die Leute, die sich nicht ändern wollen.
+Das sind irgendwelche alten Sachen oder Informationen,
+die man nicht hat, das sind Systeme und so weiter und so fort.
+Und sofern hat sich das,
+glaube ich, ein bisschen verändert.
+Also man muss und machen wir auch unsere eigenen Produkt,
+bis zum Exzess nutzen.
+Auf der anderen Seite muss man in 2026 wirklich
+produktiv gehen und zeigen können,
+welchen Value am Ende erhebt,
+wie viel Speich ein, wie viel schneller bin ich in Zetterer
+ansonsten kommt man da nicht mehr weiter.
+Ich glaube, es hat sich ein bisschen geändert.
+Jetzt ist ja seit unserer Gründung
+und du hast gerade schon so ein paar Meilensteine erzählt,
+also damals sie im Languagemodels,
+die Sprünge dies gemacht hat, die waren ja schon noch sehr sehr groß.
+Die sind kleiner geworden und trotzdem
+stimme ich dir zu, dass die Fähigkeiten
+von KI immer immer besser geworden sind
+und immer mehr Dinge besser konnten als Menschen
+und der Trend hält ja.
+Und jetzt in den letzten Wochen
+geht es ja irgendwie gefühlt noch mal schneller weiter.
+Und ich würde sagen, mit so dem echten Ankommen
+von Cloud Code in der Breite.
+Und dann allem was um
+Mode, Boot und OpenClor.
+Jetzt gerade passiert es.
+Passiert noch mal mehr gerade was so
+und diese Bereich KI-Gänden haben
+Gedächtnis, was ich fortlaufen aktualisiert
+und können wir auch proaktiver werden.
+Wie ordnet es so das ein?
+Ich glaube, das erste wichtige ist
+zu verstehen, dass AI sich exponentiell weiterentwickelt.
+Ob es da bestimmte Platos gibt?
+Ja, aber bei Large und wenn man Raussung
+entwickelt sich AI exponentiell.
+Und jetzt wir als Menschen können das
+halt nicht wahnsinnig verstehen.
+Und vor zwei Jahren war das das erst mal so
+dass man das Gefühl hatte.
+Okay, AI, wir verstehen's
+weil es auf einmal in diese Region
+kommen, wo Menschen auch sind.
+Und jetzt zieht es halt extrem schnell
+an uns vorbei.
+Und kann auf einmal Sachen,
+die Menschen, es kann Sachen so gut,
+wie Menschen, uns kann wahrscheinlich
+den nächsten Sachen viel, viel besser
+sodass wir das gar nicht mehr verstehen werden.
+Und es ist nicht heute schon so.
+In vielen Bereichen.
+In vielen Bereichen ist das auch heute schon.
+Es gibt also keine?
+Ich kann noch besser einen Text lesen,
+als ich das kann und ganz viel
+oder ganz viele Datenwässer verarbeiten als ich.
+Und das generieren über Textbild, audio,
+videocode, Videos, vielleicht noch die Letzten
+stands, die hält, aber das fällt doch jetzt alles.
+Absolut, fällt alles.
+Ich glaube, es gibt noch so ein paar,
+wie Strogeri, ich da hat mein vielleicht noch
+meichmal Vorteile, wie baue ich bestimmte Systeme
+übergrafen, hat mein vielleicht als
+Mensch noch so ein bisschen Vorteile,
+liegt aber auch daran, dass am Ende
+die AI jetzt nicht auf den Bildschirm
+lebt und kein physisches Wesen ist,
+sondern am Ende immer nur
+Excess hat zu den Fals,
+die es gerade hat.
+Aber 100% ich.
+Ich setze ein Projekt auf.
+Ich glaube irgendwie,
+keine Ahnung, 30 PDF Fals,
+da rein.
+Und er war alles.
+Und gießt auch aus dem Transcript,
+die bedenken viel besser raus,
+als ich absolut.
+Aber um, um das wieder einzuholen.
+Ich glaube, die Entwicklung geht weiter.
+Jetzt gerade sind wir beim Punkt,
+wo AI ergenden,
+eigentlich sehr gut,
+oder besser als Menschen viele Aufgaben lösen können.
+Es dauert manchmal noch sehr lange,
+bis sie produktiv werden.
+Das ist jetzt das nächste,
+was viel viel schneller gehen wird,
+mit so ein bisschen angesprochenes
+selbstlernes Systeme.
+Klar, am Anfang weiß der AI nicht alles,
+aber sie bringt sich das halt überzeit
+bei.
+Und dann Anfang hast du etschkeitses,
+die nicht funktionieren.
+Aber du kannst ja viele Sachen
+doch vielleicht auch erraten,
+oder über die Zeit aus den Traces lernen.
+Und dann brauchst du vielleicht den Menschen gar nicht mehr,
+um jetzt dann auch irgendwas einzufstellen.
+Erklär das mal kurz,
+wie, weil ich glaube,
+das ist eine Ebene,
+die aktuell viel noch nicht zugänglich ist,
+dass die KI mit der sie arbeiten,
+selbst dazu lernt.
+Was muss passieren, damit das funktioniert?
+Mende braucht die AI
+irgendeine Art von Feedback.
+Das kann einmal über sich selbst sein.
+Also du kannst eine AI haben,
+die exi kutet was.
+Und dann habe ich eine andere AI,
+oder kann auch das gleiche Modell sein,
+mit einem anderen Prompt.
+Und beobachtet den Output
+und sagt halt das war gut oder das war schlecht.
+Das Interessante ist,
+dass man damit schon extrem viele Fehler lösen kann.
+Ich glaube, es gab jetzt ein Papers von Oben AI,
+dass man irgendwie 80 Prozent der Fehler
+der so relativ einfach wieder ausbessern kann.
+Und dann kann man das noch ein bisschen
+aufdrehen.
+Dann hat man verschiedene Personen,
+die Feedback geben,
+das ist noch mal ein Tick besser.
+Und dann hast du schon die Großteil der Fehler
+irgendwie rausgelöst,
+der einfach in einem System in sich,
+was ich selbst beobachtet und was
+selbst Verbesserung macht.
+Aber ich kann natürlich
+dann im nächsten Schritt
+auch externe Validierung
+oder externe Outputs nutzen,
+um mich zu verbessern.
+Beispielsweise.
+Ich habe nur Order,
+die würde in ERP-System gespielt.
+Ich merke aber irgendwann später
+schaue ich mir an,
+was wirklich passiert ist.
+Und ich zieh mir raus,
+das vielleicht 1,2,3 Werte falsch waren
+noch mal von Menschen,
+was korrigiert wurde.
+Ich nehme die Differenz zwischen dem Input,
+schieb die wieder zurück in mein System
+und sage, wir hast mal aufnächstes Mal
+macht das irgendwie besser.
+Relativ einfach.
+Und das kann ich auf einer
+einzelnen Ebene machen in einem Schritt
+und sagen, okay,
+jetzt verbessern wir mal
+einfach gesagt,
+das Prompt in diesem Schritt.
+Ich kann das aber mittlerweile
+auch schon in
+agentischen System machen,
+das man halt sagt,
+wir hast mal auf.
+Jetzt hab ich irgendwie 50 mal
+oder ich hab tausend mal die Order bearbeitet.
+Nur 50 mal wusste ich,
+wie es lösen muss.
+Aber ich hab hier ungefähr 50 Fälle
+und dann kann ich nicht
+passen einfach nicht.
+So muss ich jetzt meinen Graf ändern,
+muss ich mir jetzt
+9 neue Rote finden,
+die ich lösen kann
+oder passt das in die anderen rein.
+Und dann baut sich das System
+über Zeit andere an,
+weil das Ganze beispielsweise
+ist einer gut.
+Dann soll die vielleicht doch nochmal
+ein anderes System schäcken,
+muss es halt irgendwie wissen.
+Aber da kann ich ja zum Menschen
+gehen und sagen,
+ich hab das Gefühl,
+ich hab hier bestimmte Systeme,
+ich gar keinen Zugriff drauf
+und keine Produkte,
+und keinen KI-Tema.
+Also die KI-Modelle
+müssen nicht besser werden
+um das zu tun,
+sondern wir brauchen Produkte,
+um die Modelle herumgebaut
+die diesen Feedback Loop
+möglich machen.
+Richtig.
+Also man kann,
+mittlerweile wird natürlich
+schon viel in den LLM selber
+oder in einzelnen Plament abgefangen.
+Aber man muss relativ viel
+drum herumbauen.
+Und das sehen wir auch,
+es ist extrem wichtig,
+wie mache ich die Variations,
+wie bei euch das,
+welche Systeme bin ich an,
+welche Möglichkeiten gebe ich,
+wie für Louis Treis,
+mache ich in Zetterer.
+Und jetzt hat das Kunstdruck,
+da drum zu bauen,
+ist mittlerweile wichtiger
+als das LLM selbst.
+Vielleicht auch ein konkretes Beispiel,
+also kann es natürlich jetzt
+opos 4.5 nehmen,
+um irgendwelche Daten zu extra hier.
+Also relativ teuer Langsam.
+Ich kann es aber auch machen,
+ich nehme halt Gemini Flash
+und das ist halt einmal machen
+und das ist dann irgendwie korrigieren
+und machst noch mal irgendwie
+dreimal den unterschiedlichen Varianten.
+Kostet mich am Ende ein Bruchteil
+ist viel schneller
+und am Ende besseres Ergebnis
+als in opos 4.5 Modell.
+Und so kann man jetzt
+im Produkt halt anders bauen,
+in dem man halt vielleicht
+einfach andere Wege probiert
+und nicht einfach immer nur das
+teuerste Modell nimmt.
+Auch wenn's beim ersten
+Versuch das beste Ergebnis hätte,
+du kommst aber zum noch besseren Ergebnis
+zu geringerem Kosten
+in einer another Konstellationer
+oder anderen Zetter.
+Um diesen, wo stehen AI-Age und
+sollte, Block noch abzuschließen,
+wo wir das zu sagen,
+stoßen agents immer heute
+immer noch angrenzen,
+was geht noch nicht?
+Die größten Probleme, die wir sehen,
+sind einfach das Systeme
+und Zugriff auf Informationen.
+Das ist immer das größte
+Problem.
+Ja, haben keine Schnittstelle,
+wissen wir nicht,
+etc.
+Und das zweite große Problem
+ist Prozess wissen
+in Organisation.
+Wenn wir jetzt eine
+Großversicherung haben
+und da muss man rausgeführt werden,
+die haben halt sehr genauer
+regeln, wie jetzt
+über verschiedene Länder
+die Inweis gestellt werden muss.
+Jetzt funktioniert das
+auch in den meisten Fällen.
+Sie haben das mal irgendwo
+nie da geschrieben.
+Aber es gibt jetzt leider
+diese eine Ausnahme
+für Spanien.
+Warum auch immer?
+Weiß eigentlich auch keiner mehr,
+der noch da ist.
+Aber dieser Ausnahme gibt's.
+Und diese Ausnahme muss ich
+halt einmal treffen
+und einmal lernen.
+Ansonsten kommt halt
+der gut, da ist jetzt
+aber eine 10 Cent Abweichung
+und dann reicht's halt nicht.
+Das sind die Probleme,
+die wir am häufigsten sehen
+und ist da
+heute für Unternehmen extrem lange
+dieses ganze Wissen.
+Viele sind überhaupt
+nicht AI-Ready eigentlich.
+Wir machen jetzt AI,
+aber viele sind eigentlich noch nicht
+da, weil die ganzen Daten
+nicht aufbereitet sind,
+weil die ganze Systeme,
+ich aufgereitet sind,
+das sind die größten Probleme.
+Okay, also immer wieder.
+Ich bin ja das hier,
+glaube ich, ihr die
+der Podcastfolge
+Datenprozesse und Zugang
+zu System.
+Wenn du das gelöst hast,
+also Daten sind sauber
+sind zugänglich.
+Widersprechen sich nicht
+du hast das Thema
+auf die KI
+agente zugreifen können
+und du hast die Prozesse abgebildet
+und dokumentiert
+du das für sie AI-Gens-Beybring
+kannst.
+Was, wo würde du sagen,
+wo gibt's dann trotzdem noch
+Grenzen?
+Echnisch gibt's keine Grenzen mehr.
+Wir hatten jetzt
+ein KSB in der Führung
+und haben wir den AI-Gend
+in vier Stunden fertig gebaut,
+weil es vorbereitet war
+und dann mal gut.
+Und dann hat das
+auch funktioniert.
+Das,
+das ist,
+das ist komplett.
+Ja, was ist mit so
+komplexen Aufgaben?
+Also,
+komplexe Aufgaben,
+wie so,
+weiß ich nicht,
+umfangreiche,
+irgendwie reports,
+bauen aus
+verschiedensten Daten,
+quellen,
+die zusammenführen
+oder auch
+alles, was so
+in Richtung
+Koding Produktentwicklung.
+Geht?
+Ist es dann so,
+dass es einfach
+dann immer nur darum geht,
+dass du nicht
+eine riesen Aufgabe
+an den Agent gibt,
+der 250 Schritte
+machen musst,
+sondern bricht das,
+dann wieder runter.
+Aber ich das richtig verstanden.
+Genau.
+Und du kombinierst,
+dann Code-Execution
+mit LLAMS
+und musst halt überlegen,
+in welchem Schritt
+mache ich was
+und was ist auch besser.
+Also,
+konkret,
+wir haben einen Anwendung,
+ist Fall beim Kunden.
+Das sind 60 Schritte.
+So, dauer Komplex,
+ja, das ist eine Mischung aus LLAMCALL,
+das ist eine Mischung aus Code-Execution,
+die Repetitiv
+oder nicht Repetitiv der Code,
+muss erst geschrieben werden.
+Jedes Mal neu ausgeführt wird,
+das ist sehr komplex.
+Und im Einzelfall,
+wenn du jetzt nicht das System aus dem Droomer rumgebaut
+hätte es No Chance.
+Vor zwei Jahren
+oder selbst von Jahren
+No Chance.
+Ja.
+Und jetzt hast du IWL's drum
+und da jedem einzelnen Schritt
+du packst das ein.
+Du bist sicher, dass das
+da gut funktioniert,
+dann baust du es im großen
+ganzen Masse nochmal
+im EX-Schritte
+und nichts überprüfung
+und dann geht das.
+Aber es ist auch nichts,
+weil es jetzt innerhalb
+von vier Stunden funktioniert,
+sondern das ist das, was
+länger braucht und funktioniert.
+Generell,
+man kann fast jedes Problem
+heute lösen.
+Es ist nur eine Frage des Aufwandes
+und wie lange
+sitzt jetzt vielleicht dann doch
+noch ein Zuluschen
+engenier da
+und baut das am Ende
+mit dem Bunden.
+Würdest es,
+es baut sich von
+selbst.
+Er und eigentlich muss ich
+nur noch einmal sagen,
+was zu tun ist.
+Das funktioniert nur
+bei ein bisschen weniger
+komplexen Justices.
+Ich nutze jetzt mal
+die Chance ganz
+eigen nutzig.
+Und hier
+noch mehr zu lernen
+und zwar hast du
+gesagt,
+was ihr einen CEO
+offes gebaut
+und ich will ja auch ein bisschen
+verstehen.
+Eine
+HDA platform
+für Agent Spout
+wie nutzt ihr das
+eigentlich selbst,
+da
+erzähl mal
+dein CEO
+offes,
+wie sie das aus
+und wie
+hast du da
+Eigentz integriert.
+So
+der hintergrund
+und wie wir das
+gebaut haben
+und wie wir es
+auch immer noch weiter
+bauen ist, dass
+ich mir
+Projekt gebaut habe
+und belegt habe,
+okay,
+was macht ich eigentlich
+die ganze Zeit.
+Und was sind die
+durchzugehen, okay, aber die aufgaben, die ich mal so welche Aktivitäten mache ich.
+Ich bin in einem Call, ich erzähle was, ich bereite was dafür vor, danach habe ich
+danach Action-Eitum und es macht wieder etwas anderes.
+So ist ja meistens mein Tag.
+Ich habe irgendwie 12 bis 16 Meetings am Tag, so das war eigentlich die ganze Zeit.
+Und dann muss ich zwischen durch nochmal irgendwie ein bisschen nachdenken, dann habe ich
+irgendwann länger ein Block um Strategie durchzudenken, dann habe ich bestimmte
+E-Mails, die ich beantworten muss, dann muss ich mit dabei dann sprechen und so weiter
+und so fort.
+Und dann nächste Frage war, welche Tools benutzt sich?
+Ja, von irgendwie natürlich Gmail, ja, von Noschen, von irgendwelchen Präsentationen, die
+ich halten muss und machen muss, bis hin zu irgendwelchen Research Sachen und so weiter
+und so fort.
+Und dann haben wir angefangen, quasi uns all diese Sachen erstmal zu connecting und
+dann einzelne Skill, so da einzelne Bausteine quasi zu bauen, um die Aufgaben, die ich
+da mache, zu abzubilden.
+Und dann, dann haben wir eine erste und bestimmte Sachen, die Helmere geblätetiv
+macht, kann man relativ schnell irgendwie abhaken.
+Ja, ob das jetzt e-Mails sind, ob das eigentlich follow-up sind, ob das Präsentation
+sind, ob das Outlines von Präsentation sind, kann man alles relativ schnell abhaken.
+Letzt mal einmal einen konkret machen, du hast einen Meetings und das Transkript wird
+dann an einen Agent übergeben, der dir ein follow-up dazu formuliert.
+Genau.
+So was der Agent entscheidet erstmal, welche Art von Meetings ist das für welche verschiedenen
+Projekte, die ich jetzt habe, ist das relevant.
+Also, kann ja auch immer sein, dass jetzt den verletzen Podcast, dann kann ich erstmal
+nur selber irgendwie Feedback drauf lernen, aber ich kann natürlich jetzt auch überlegen,
+das habe ich gesagt, wie nutzt sich das für mein Social Media, was post dich jetzt davon
+an LinkedIn, welche Aussagen sind, cool, welches Kort, ja, das heißt nicht immer, ich
+das Transkript und überlege erstmal, wo kann das relevant sein.
+Und wenn ich dann sage, okay, das ist jetzt relevant für A oder für B, dann schick ich es
+dahin und dann wird das da verwertet.
+Und das, wo für ist es relevant ist, wiederum eine Dokumentation, eine aktuellen Projekte
+auf die Data-Zugelfahrt.
+Genau.
+Das ist quasi ein Orchestration-Layer, also ein Orchestrator, der drüber sitzt, an den
+das erstmal alles geschickt wurde, der hat quasi wissen über meine verschiedenen
+Projekte und über meine verschiedenen Workspace, Files, etc., am Ende ein Filesystem
+einfach.
+Und dann kann ja sagen, hier ist gerade irgendwie dieses Projekt offen, da haben wir das
+letzte Mal im Vortrei-Tagen-Range arbeitet, vielleicht ist es dafür relevant.
+Bis zum Wissengrad mache ich das auch noch mal nur el natürlich, das dann sage ich,
+ich komme doch nochmal hier relevant, weil es natürlich jetzt kein perfektes System zu diesem
+Zeitpunkt ist.
+Ich arbeite irgendwie an 12 Sachen gleichzeitig mit irgendwie ein paar Prio, der schaue dann schon
+auch selber rein, das sagt, guck mal hier, es ist noch mal was und geht da noch mal
+die Verein und arbeitet dann dran.
+Und das interessanter aber eigentlich ist, dass wir erst lange oder ich auch erst lange gedacht
+hab in der Air-K jetzt baue ich mir mein eigenes Ziel offes und ich spiegelt quasi das, was
+ich selber mache und baue das erst mal in der AI.
+Und dann habe ich irgendwann so eine Detour gemacht und dachte mir in der Air-K und das
+bis jetzt vielleicht in meinen Sachen nicht ganz so ganz so verkehrt unterwegs, aber man kann
+das immer besser machen.
+Und dann habe ich mir erst mal angefangen, eigentlich so ein Beirat und wütte
+einen Personer Feedback zu bauen.
+Das heißt, ich habe jetzt je nachdem, was gerade passiert, habe ich verschiedene
+Personer als die dann Feedback auf die Sachen geben können, die ich mache.
+Entweder Feedback geben oder ich habe so ein Feedback iterative Loop, das heißt,
+beispielsweise ich mache jetzt nicht so immer muss ich nach New York fliegen und eine
+Präsentation für so einen Fintekting halten, so, dann gehe ich hin und sagt,
+diesen Experten her bauen wir mal die Präsentation und iterier solange bis ihr halt
+um ihn score 8 von 10 vergibt und dann iteriert das dann kann ich auch ab und zu
+noch mal wieder edetieren und sagen, vielleicht habe ich noch mal hier eine neue Story,
+aber die Kurks jetzt ist, ich bauen nicht nur das nach, was ich mache, sondern ich nutze
+auch Air-I sehr viel, um mich eigentlich zu enthänzen und eine bessere Version von mir
+selbst zu bauen.
+Und das ist das, weil sie jetzt in den letzten Monaten ja meistens Spaß gemacht habe,
+weil ich merke, wie mich das selber wieder besser macht.
+Kurz in eigener Sache, wenn dir der AI First Podcast gefällt und du mehr spannende Inhalte
+und hoch karedige Gäste hören möchtest, dann freue ich mich über deine Unterstützung.
+Mit einer fünf Sternebewertung und einem Abruf für den Podcast hilft so und sichtbarer
+zu werden und AI First weiter zu entwickeln.
+Für dich und die gesamte Community, ich danke dir.
+Können wir dann noch ein bisschen, ich würde gerne noch ein bisschen mehr reingehen und es
+noch besser zu verstehen.
+Also es ist jetzt so ein Beirat, das sind dann quasi du hast an irgendwie für jedes Beirat
+mitglied einer Agent aufgesetzt.
+Ja, ja, sie jetzt ist ja auch schon wieder, ich habe mir jetzt die Definition jetzt
+ist ja schon wieder Agents ein bisschen blurry, am Ende sind das jetzt Markdown Files und ja
+du könntest sagen, das ist ein einzelner Agent, aber am Ende gibt es ein Orchestrator, der
+sagt, pass mal auf, jetzt wird dieser Skill gekollt, dann gibt es auch mittlerweile ich glaube
+60 oder 80 Super Agents, die je nach Bedarf angerufen werden können.
+Und dann wird halt gesagt, er pass mal auf, Frank Slotman war mal ein krasser CEO, vielleicht
+sollen wir dem mal fragen oder ist ein krasser CEO immer gewesen oder wir fragen halt
+irgendwelche Investoren nach ihrem Feedback.
+Und dann wird halt, was sie dann darauf so die beste Persona ausgewählt.
+Wie baust du da, wie baust du diese Personas oder Markdown Files?
+Der war mit dem Orchestrator, dem ich der AI sagen, am Anfang also eigentlich weiß, wo ich nicht
+so schwer sich zu bauen ist, dann ist es mal auch veröffentlichen bzw. das ist auch bei den
+Biemdrenn.
+Das ist jetzt am Ende gar nicht so komplex, das zu bauen, weil der Mende ist es, du nutzt
+Cloud Code oder Körser und baust dir das und dann bautet das in Gericht und ich hatte die Idee
+und habe ich halt so lange interessiert, wie ich das Gefühl hatte, das hilft mir jetzt wirklich
+weiter.
+Und ich habe am Ende keine einzige Zeile davon, vielleicht ein paar Zeilen geschrieben,
+die Faktor eigentlich, da wahrscheinlich von den, das ist mal sagen, das sind vielleicht 10.000
+Zeilen insgesamt, aber ich vielleicht drei editiert und den Rest hat die AI geschrieben.
+Okay.
+Und was ist dein Interface da rein, wie kommunizierst du damit?
+Ich nutze meistens Körser, wir bauen das auch gerade in Biemdrein, aber dafür hast du
+erst mal selbst gekochten lassen, mit einem coding agent quasi und hast gesagt, was
+auf, ich will mir hier mein digitalen Beirat bauen, da ist ein orchestraser, ich will die
+und diese Personas haben, so und so will ich damit interagieren, das kommt davon
+mir rein, das will ich zurückhaben, dann hast du es getestet, hast du wieder Feedback
+gemacht und der hat die ganzen Kontextfiles Systemanweisung für die Sub-Agence, die
+orchestrationslogik dahinter hat dann der coding agent nach dein Feedback weiter optimiert.
+Genau und dann mein Job ist jetzt noch zu abstrahieren oder war damals abstrahieren und
+so sagen, okay, es gibt die Möglichkeit, ich will Feedback haben auf dem Dokument oder ich
+bin vielleicht ein bisschen vauhler und sage, liebe Experten macht das mal selber, ich hier ist das
+Dokument, erstell mir eine neue Version, die ihr besser findet. Und dann habe ich noch
+mal irgendwie abstrahiert und sagt, okay, jetzt gibt es halt bestimmt use cases, wo ich vielleicht
+gerade kein richtige Personer habe, da gibt es noch eine Funktion, erstell mir eine Personer,
+die dafür relevant sein kann, dann gibt es halt einen langen Backlock und bei Bedarf kann
+das dann erstellt werden. Blöds Beispiel, ich hab jetzt irgendwie beschlossen, man High Rocks
+zu machen, also habe ich mir halt Handterm Backintire oder wieder heißt erstellt und der
+Coach jetzt. Ja geil, wie so Pokamots sammeldet das ja, genau. Aber es ist eigentlich nicht so
+schwer, sich das so bauen, wenn man ein bisschen abstrakt denkt, aber das ist klar. Ja,
+aus dem System denken, ja, also genau, das ist halt dieses, ja, 100 Prozent. Das System denken,
+also dieses Denken nicht, ich mache die Arbeit, sondern ich auch nicht, ich baume jetzt ein Agent,
+der die Arbeit macht, sondern ich baume ein System, dass dann die Agentsbau, die dann die Arbeit
+machen oder mir das Rückbringen, was ich haben will. So 100 Prozent, ich glaube, das ist zu kurz.
+Nee, das ist genau das. Und das verändern natürlich jetzt auch das Profil an Leuten, die
+du einstellen muss, weil eigentlich du brauchst viele Systemarchitekten und Orchestrater, weil
+eigentlich muss ich nur noch denken, wie baue ich was, damit ist die Arbeit macht, mehr als die Arbeit
+selber zu machen. Und ab und zu kann es noch mal hilfreich sein, die Arbeit zu machen, um zu
+testen, aber eigentlich musst du dann wieder nur das Feedback nehmen und wieder zurück ins System spielen,
+sodass du es nächstes mal nicht machst. Und musst du ein System halt relativ flexibel halten,
+sodass du gut ein schnellertarrieren kannst. Ja und ich muss wissen, was wirklich gut ist oder wie gut
+etwas sein kann. Oder, ja, ich reale gut, ich könnte natürlich dann auch wieder keine
+Fragen, wenn du jetzt die Keynote hältst und du brauchst halt eine mega Skino Storyline mit starken
+Messages und guten Visuals. Und so könnte es so aber natürlich auch wieder über KI, die
+die Persona von dem TEDx, was, was ich was mega Coach da reinbauen lassen, der das wahrscheinlich
+besser kann als du. Der Punkt, den sollte ich wahrscheinlich reinbauen und richtig,
+ich glaube, was schon, ihr viele Leute mittlerweile auch festgestellt haben, warum sie nicht mehr
+chat-GP-Tin nutzen, ist halt jetzt very agreeable. Immer das war eine tolle Frage, das ist super,
+du bist ja irgendwie ne und machen wir tolle und so weiter. Und für Leute, wenn mich dieses
+hat mich nervt, das Geist des krank, ja, es ist einfach nicht nicht cool und nicht hilfreicher.
+Und ich glaube, da ist es wichtig, wenn du so ein System hast, dass dir verschiedene Perspektiven
+bildet oder gibt. Und dann kommt halt, ich zum Beispiel habe das Neulich im Interview genutzt
+und ich hatte selber als Gefühl, das Interview war nicht gut und dann hat er irgendwie
+gesagt, du Jonas, das war aber ich ein total langweiliges Interview, das hättest du auch sparen können,
+ja, und es ist doch gut, danke. Ein Stunde später ist besser gemacht.
+All right, okay, verstanden, sie oauf es verschammelten, gute
+Food-Vorthort für mich, lass uns doch mal in eure Firma. Jetzt ein Schauen, ja, ich glaube,
+sich selbsthebeln ist das eine, eine ganze Firmahebeln ist ja das anderen und noch mit
+anderen komplexität verbunden. Wenn ich jetzt so ein Tag praktikum machen würde, bei
+B-Mär und immer gucken würde, wie ihr da so arbeitet und was da so passiert, wo würde
+mir dann überall Agents begegnen und was machen die bei euch?
+Die Frage ist, wo würden ja keine Agents begegnen und wo würdest du nicht
+in irgendwelchen Air-Eisystem arbeiten? Ich reagiere mittlerweile allergisch, wenn
+irgendwelche Sachen so gemacht werden. Alles kann transcribiert werden, alles
+kann Teil eines Projektes sein, alles kann Markdownfall sein, alles kann irgendwo
+gespeichert sein, wir müssen alles in Agents haben Feedbacken nutzen und nicht
+ohne arbeiten, ich wüsste gar nicht, wo wir ohne arbeiten, ehrlicherweise.
+Also beispielsweise, es gibt bestimmte Kunden in Deutschland,
+da dürfen wir nicht recorden, nur das A können wir jedes oder bei
+anderen Kunden können wir jede Sache recorden, das heißt einfach automatisch
+Follow-ups Action-Items, so dann fließt das aber wieder in ein Projekt von
+uns rein und abdätet den Projektplan zum Beispiel. Was ist der kritische Fahrt in diesem
+Projekt und was in den Dingen, die oben wir den gelöst werden muss?
+Also das heißt, wenn wir dann einmal in der Wochen Review dieses Projektes machen,
+steht natürlich ganz oben her, guck mal, das haben wir letztes Mal besprochen,
+das ist gerade der kritische Fahrt. Dann wird das wieder recordet und
+aufgezeichnen, ob wir das jetzt gelöst haben oder nicht gelöst haben.
+Grunde kommt und sagt, ich brauche dieses Feature, weil das ist
+gerade erwand für X-Prozent der Cases, ohne das kann ich das nicht machen.
+Okay, gut, kommt aus dem Trans-Gedraus, wird bei uns in linear geschoben, wird als
+ticket erkriegt, wird geflagt, dass das von dem Kunden ist, wird geflagt, dass das
+kritisch ist. Dann haben wir eine bestimmte Deadline drauf, in wie viel Stunden
+das irgendwie gelöst werden muss, dann muss das nochmal jemand anschauen,
+ob das jetzt irgendwie komplett mit der E-gelöst wird oder ob da jetzt
+der Baller-Pasitz am Ende schaut natürlich immer drüber und dann fließt das wieder zurück,
+das jetzt gelöst. Das heißt, wir können meist ein Medium wieder hingehen
+und zum Kunden sagen, Herr Pazowt, das wurde jetzt gelöst im Zeit rammeln.
+Das ist dann wieder ein Orchester, der alle Wieding-Transcriptive bekommt, oder
+habt ihr dann spezialisierte Agents, die nur auf den Projekt Wieding,
+zum Beispiel arbeiten und daraus die wichtigsten Infos ziehen und das erneuer
+sehr am Zurgspiel, oder Projekt E-Wieding. Also nicht alles ist immer nur
+Meeting Agents und Transcripts, das ist natürlich, wo der Mensch jetzt irgendwie
+noch die Schnittstelle ist, aber wir haben dann auch Agents oder, ich bin ja obwohl
+ich, wie eigentlich die ganze Zeit Agents machen, redet es mittlerweile mehr so von
+AI-Systemen meint, nicht, die halt zu Agents haben. Aber das ist immer,
+das will ich einmal verstehen, also du denkst immer in dieser Orchester und
+SAP agent-Luge. Ja, ja, okay.
+Also, es gibt ja auch viele unterschiedliche Definitionen, oder je nachdem
+wie weit du ein Agent fast, ja, für mich ist eine, es ist ein Operating-System
+und wir haben product-operating-System und wir haben Marketing-operating-System,
+was unterschiedliche Agents sind, der eine Schreibt-Block-Post, der andere Reviewt,
+der dritte Schreibt die Hooks und so weiter und so fort. Aber am Ende muss ich das in
+ein System zusammenpacken, was geschärten Kontext hat, oder aber auch weiß, was
+sonst in der Firma passiert. Und das ist jetzt so, zum Beispiel,
+zwischen product- und Marketing ist jetzt so semi-intigiert, ja,
+da muss ich am Ende dann wieder Markdown-Falz-Brüberschieben
+auch da noch. Eine Zukunft werden wir erst dann auch integrieren und das ist quasi
+ein großes Orchester-ations-System, wo es wieder verschiedene Sub-Orchester-
+gibt, die verschiedene Agents oder Specialized Agents dann benutzen.
+Eigentlich baust du am Ende Organisation nach, wie Organisationen aufgebaut sind,
+mit verschiedenen Leuten, die dann wieder ein Team leiter haben, die dann wieder
+können, bei BMW haben die Gruppen leiter, haben und das baut man eigentlich nach.
+Aber jetzt baust du das ja so nach, dass das nicht für Menschen gebaut ist,
+die da drinnen arbeiten und zeugs machen, arbeiten erledigen, sondern es muss
+ja kein immer haben. Wie muss ich denn meine Firma bauen? Also beispielsweise um
+diesen ganzen Kontext bereitstellen zu können, damit das möglichst, damit
+eh, nennen wir sie jetzt mal Agents, damit Agents dort möglichst produktiv arbeiten können
+und nicht die ganze Zeit Fehler machen, weil das Anfällige ist doch in diesem System mit so viel
+in Sub- Agents, dass wenn der erste vorne irgendwas falsch verstanden hat oder dem irgendwas
+fehlt, dass sich der Fehler dann durchmultiplyiziert durch die gesamte Kette an Agents, die auf dem
+Anfang aufsetzen. Es war ein Problem und man hat ja eigentlich diese, diese, diese
+Chain, dass du sagst, wenn ich jetzt in jedem Schritt 15 % Fehler oder correctmasquote habe,
+dann bin ich am Ende bei X-Schritten bin ich bei nur noch 40 %. Das ist, das ist nicht mehr so ein Problem,
+weil die einzelnen Schritte dann irgendwie dann doch wieder abgeschlossen bewert ist oder eskaliert
+ist, wenn sie nicht sicher genug sind. Und so multiplizieren sich die Fehler eigentlich nicht,
+weil wir jetzt im einfaches Beispiel immer so irgendwie eine Extraction von irgendwelchen Daten,
+ja, wenn die einmal falsch sind und aber im dritten Schritt du eigentlich die product,
+die brauchst, um die ins ERP-System zu schieben, dann merkst du, wenn die falsch ist,
+wenn du wieder zusätzlich checks hast. Aber ich sag dann ja, hey, pass mal auf,
+die muss ja 16 digit haben, die muss irgendwie in der 5 Stelle das haben und so weiter und so
+vor, dass das ja vorher gelernt, dann fällt das spätestens da auf, dann kannst du wieder zurück
+zum ersten Schritt gehen und sagen, pass mal auf, das hat jetzt nicht funktioniert.
+Und um jetzt wieder auf deine Frage zu kommen, genau deswegen muss ich eigentlich agents bauen,
+die nicht nur irgendwie sub sub ein agents ein Schritt machen, weil wenn ich nur ein Schritt mache
+und dann da ein Fehler habe, der aber ins Schritt normal eins passiert ist, dann kann ich hier nicht
+korrigieren, das heißt, die beiden müssen miteinander kommunizieren können, beziehungsweise müssen
+auch zurückgehen, um den Fehler lösen zu können. Dann kommen wir dahin shared context ist extrem wichtig
+oder deswegen sind wir jetzt vom prompt-engineering zu context-engineering gekommen,
+ich muss quasi in langen meiner chain eigentlich die richtigen Informationen zum richtigen Zeitpunkt
+haben und auch nicht zu viele, weil dann overlord ich meinen, meine LLM-Calls, das ist mittlerweile
+einster wichtigsten, faktoren um diese agents über verschiedene, um über länger prozesse dann
+auch laufen zu haben. Wo letzt ihr das um, wie, also wo liegt der context?
+Er liegt bei uns im agent, das ist das, was wir bauen. Also wir bauen ja am Ende in der
+agent-platform, die hochkomplexe Prozesse zu, irgendwie 99% ausführen kann. Wir haben regulierte Prozesse,
+die wir machen und wir können halt irgendwie sagen, pass mal auf, das machen wir jetzt seit x 1000
+mal und wir können euch zeigen, das ist machen wir halt irgendwie zu 99,5% richtig. Und wir bauen
+die Plattform, die das ermöglicht, das zu tun und das heißt unter anderem, das wir zum Beispiel
+verschiedenste Funktionen haben, um Kontenz von A nach B zu schieben, zu extra hier und sicher zu stellen,
+das an der richtigen Stelle der richtige Kontext ankomt. Okay, machen wir es auch ein bisschen greifbarer,
+also die meisten Unternehmen, die haben jetzt SharePoint, Drive, oder irgendwie in den Airpsystem und vielleicht
+noch ein Projektmanagement-Tool und da liegen überall Informationen drin, die relevant sind, die
+irgendwie zusammen kommen müssen, damit der agent dann das damit machen kann. Und die Herausforderung
+ist wie schafflich setz, genau diesen Kontext, der ja nicht schön an einem Ort, sich perfekt, immer aktuell
+ist, wie schafflich sind, irgendwie zusammenzubringen und dem agent aber zu erklären, was von wo
+wann wie wichtig ist und dann muss ich das Ding ja noch irgendwie aktualisieren.
+Direkt, und das ist das, warum es für irgendwie uns gibt, die das können auch machen.
+Natürlich eigentlich damit nicht mehr so wahnsinnig viel beschäftigen muss, weil das das immer nur
+macht diese Aufgabe und das System für das Aus. Und weiss zum Beispiel, okay, ich muss in SharePoint
+nachschauen, ziehe bestimmte Informationen, ich weiß, dass ich in Jara nachschauen muss, weil da
+ist das ticket, weiß aber auch, dass ich die Informationen halt speichern muss, aber jetzt zum
+Beispiel nicht alles direkt einfach nur immer in den Kontext laden kann und jedes mal alles
+mitschicken. Konkret, wenn ich jetzt ein 30. einen PDF habe und ich habe noch mal mein Jara
+ticket und dann habe ich noch mal was, wo die ganzen Informationen sind und schieb das in mein
+Kontext, wenn nur, dann wird es auf einmal relativ viel, wenn es relativ viele Totens, für die
+Aufgabe, die ich löse muss und dann wird zum Beispiel sehr teuer. Weil dann schieb ich auf einmal die
+ganzen Informationen in jedem Schritt mit und auf einmal bin ich bei Kosten, weil es neulich mal
+in so einem Case gehabt, wenn wir das nicht optimieren von 23 Euro pro Execution. Das funktioniert dann
+halt nicht mehr, weil da kann ich dann ordentlich Menschenhinsetzen. So, dann optimiert man das und
+dann kommt es halt im Jahr auf ein, zwei Euro oder vielleicht an, drei pro Execution, aber das ist genau die
+Optimierung, die, die wir dann machen müssen, bzw. wo das System in der Renten so intelligent mit
+der Weile ist, dass es sich das ich nother schieben kann. Trotz konstruinz. Wenn du jetzt über die weitere
+Entwicklung von Biem nachdenkst, für welche Rollen stelltst du denn noch Menschen ein? Dahls immer,
+du musst am Ende mit den Leuten reden und sie auch überzeugen mit dir zu arbeiten und sales bei uns ist
+sehr technisch, die müssen sehr gut verstehen, was die Probleme des Kunden sind und wo dann
+auch der Wert ist. Also, es ist nicht, hier ist ein Produkt und bitte die Pläumern, das mal, sondern
+bei dem, was wir machen geht, darum, das ist ein Prozess der kosteten Millionen Euro im Jahr. Ja,
+so, was können wir da drin sparen oder wie können wir den Prozess machen? Das schneller machen.
+Wie können wir es euch ermöglichen, zum Beispiel, schneller Leute einzustellen? Also, wie können
+unsere Time-To-Hier verkürzen, in dem wir agents einsetzen, wie halt Screening machen, die
+Validierung machen, etc. Das heißt, es selbst war unser sehr, sehr value getrieben. Das zweite sind
+solution-engineers, die dann im nächsten Schritt mit dem Kunden arbeiten und mit dem Kunden gemeinsam
+sicherstellen, dass dieser Agent jetzt nicht nur in der Lente demo ist, sondern am Ende in
+Produktion geht. Und das war vor zwei Jahren ein Problem und es ist immer noch teilweise
+eine Challenge, nicht schöne Demos zu bauen, weil das hat, sondern du musst diese agents in
+Produktion bekommen, dass sie wirklich dann zeigen können und dass sie dann auch value bringen,
+haben und dafür, dass die Kodigen auch einfach noch wichtig, kass im Code. Ja, es hat sich
+geändert, also vor zwei, drei Jahren, weil der solution-engineer typisch bei sehr gut im Prompt
+Engineering und auch bis zum gewissen Grad im Koden. Jetzt ist es so, dass wir wieder fast klassische
+Berater einstellen können, die eher so Prozess denken haben und Fragen stellen, als dass sie jetzt
+noch viel Koden müssen, das, wenn das machen können, das machen wir so ein bisschen gehen.
+Macht KI oder oder unser Engineering Team? Aber jetzt hat sich ein bisschen geändert. Genau
+und was wir vorhin schon besprochen haben, Leute, die Systeme bauen können, diskulieren. Und
+das, der das ändert sich jetzt auch ein bisschen bei uns im Team, also selbst unser HR Team oder
+unser Marketing Team, wird halt erwartet, dass dieses Systeme bauen und agents bauen, die
+eigentlich ihren Job schneller effizienter und besser machen, als nur die Aufgaben auszuführen.
+Ja, wenn er die Böringer, das ist der Gründer von Jamie, so ein Meeting, als tentet, die die
+gebaut haben, der hat hier im Podcast gesagt, dass er glaubt, dass er mit 50 Leuten auf
+100 Millionen HR wachsen kann, wird es damit gehen, für Biem?
+Aber ich auch sagen, ich glaube, so, ja, ja, also relativ klar. Also wir sehen schon, wir machen
+halt Enterprise-Geschäft viel. Ja, und das ist schon viel Energie reinfliegen. Aber wir sind
+mittlerweile so gelebritcht, dass eine Person mehrere Sachen machen kann oder viel machen kann,
+was uns extrem hilft und natürlich das, das sehr hochschraubt. Also so fängt ich auf jeden
+vermitteln, dass du mittlerweile mit, teilweise wahrscheinlich 25 bis 50 Leuten. Ich glaube, du kannst
+es auch mit 25 machen, auf 100 Millionen kommen kannst.
+Noch mal ein kurzer Blick auf eure Kunden. Ich will mal so eine kleine checkliste von dir haben.
+Was sind die Kunden, die mit euch bzw. agents am erfolgreichsten sind und echten Wert
+daraus generieren? Was machen die anders als die anderen, die irgendwie in diesen ewigen
+Pilotphasen hängen bleiben und nicht so richtig Dinge ausprobieren, aber das nicht in
+den Produktivbetrieb bekommen. Die agents, die am meisten value bringen, sind gar nicht so
+unfassbar fanzie. Sondern das sind, wird fast sagen, einfache Sachen, die klar definiert sind.
+Wir machen viel so oud gesurste Arbeit. Also das liegt vielleicht beim BPO und da arbeiten vielleicht
+sechs Monate irgendwo, die momentan das machen und das bauen wir in die AI agents rein.
+Verhältnismäßig straight forward, Massive Impact und aber auch klar definiert. Und da das
+gut dokumentiert ist, normalerweise können wir die agents sehr schnell bauen und dann sehr schnell
+in Produktion bringen. Dann gibt es andere, die so eher projekte machen, die vielleicht mehr
+im Begüß sind. Es ist vielleicht doch nicht ganz klar. Ich will eigentlich das, ich will zum Beispiel
+gerade, ich habe die Mitarbeiter nicht mehr und ich will eigentlich diese Informationen irgendwie
+absaugen, bzw. diese Nachbauen. Viel komplexer dauert viel länger. Und der größte Punkt ist
+aber du musst von Anfang an, eigentlich wissen, was ist mein Value in diesem Projekt. Und wenn
+da halt ein paar 100.000 stehen oder wenn da steht, ich kann halt meine Time to hire um 60
+Prozent verkürzen und das heißt in meinem Business X million aufs Jahr gerechnet, dann hast du einen
+anderen weifter drin. Als wenn ich sage, dass wir wirklich cool, jetzt mal so einen agent zu bauen,
+damit ich hier intern etwas rumstecken kann und alle freuen sich, dass ich jetzt diesen agent,
+dem ich dann nahm gegeben habe, dass der da ist. Das ist nett. Aber es treibt halt am Ende nicht
+wahnsinnig den Wert des Unternehmens. Was sind die Voraussetzungen, diese Geschaffen haben? Also
+es ist das Datenprozesse Zugang zu dieses Themen oder kannst du da noch konkretisieren oder
+andere ergänzen? Erst mal wissen über den Prozess, klar zusammenziehen und haben das ist
+das wichtigste. Systeme anschließen, es ist ein Portwellneck und es dauert aber am Ende kann man
+zu lösen. Es dauert halt vielleicht noch mal ein Security-ordet mehr, um das zu tun, aber das
+eigentlich am Ende kein Hindernis um das Live zu bekommen. Das Thema ist, wenn man es nicht live
+bekommt, ist entweder, es hat keiner den Drive, das zu machen, weil am Ende das in realen
+merda. Ja, ob ich jetzt irgendwie drei Stunden irgendwo einspao oder mal 10.000 Euro hier einspaare,
+hochkehrs. Und dann mache ich das halt irgendwie am Ende auch nicht und dann stipps in irgendeinem
+Gremium, weil irgendwie man immer Angst hat und immer sagt, ah, dann machen wir das jetzt lieber mal nicht.
+Das ist das, das glaube ich, wo vielstück. Das andere ist Vertrauen muss man aufbauen und auch
+eher Eigentmusik vertrauen aufbauen. Und wenn der Agent konstant vieler macht, jetzt hierhin
+Produktion. Und man kennt das von Autonum Autos, der Anspruch an Agents oder AI ist deutlich höher
+als bei Menschen. Wir haben cases, wo wir Probleme hatten oder uns gesagt wurde der Agent macht
+die Aufgabe nicht so gut. Und dann haben wir gesagt, ne okay gut, aber das kann irgendwie auch nicht
+so ganz sein, weil wir haben ja von euch testaten bekommen und da sind wir extrem gut drauf.
+Und dann stellen wir fest, als wir dann nochmal alles angeschaut haben und quasi mit den Senior
+Leuten noch mal durchgesprochen haben, dass die Menschen einfach noch viel schlechter waren. Aber normalerweise
+hast du kein Benchmark, wie gut die Menschen dieser Aufgabe lösen. Aber trotzdem oder der Agent hat
+hierhin vieler gemacht, deswegen nehmen wir das nicht in Produktion. Und keiner geht hin und sagt,
+was man auf, ich nehme jetzt mal von den fünf Mitarbeiter in die er hat, der hat neben alle Proben,
+wo wir hatten vieler gemacht. Deswegen darf der jetzt nicht mehr weiter, das sagt zu nicht, aber der
+Anspruch an AI Agents ist extrem hoch. Und den man sprechen muss man diese Akkus hier hochbekommen.
+Das bekommst du aber nur, wenn du gutes Prozess wissen hast und ganz genau wissen,
+weißt auch, was die etzkäße sind und auch ein Team auf der anderen Seite heißt, was es bereit
+ist, diese Informationen zu geben. Ja, der jetzt, ja, kann ich, kann ich nur bestätigen.
+Abschließend, wenn wir mal in die Zukunft schauen, so die nächsten 12 Monate ist es ja,
+blicken die Glaskugler, unheimlich schwer, aber du bist na dran am Markt beschäftigt sich jetzt seit
+Jahren mit diesem Thema. Was glaubst du, wo wir in einem Jahr von heute stehen in diesem ganzen
+agente AI, Thema, was wird möglich werden, was heute noch nicht möglich ist oder was sind auch so entwicklungen,
+die du dir gerade genau anschaubst? So erstens werden vielleicht sogar weniger über AI Agents reden und
+werden mehr über AI Systeme reden und es geht eigentlich wirklich entweder drum, komplette Systeme zu
+bauen, die irgendein Business Value bringen. Zweitens werden weniger über diese ganzen Demos reden,
+sondern würde ich einfach nur noch, was ist mein, was bringt mir das in meinem Business? Wie hat das,
+meine, meine Bottom line verändert, wie hat das mein Kunden zufriedenheit verändert und nicht mehr
+okay, das ist jetzt ein ganz cooles technisches Konstrukt und das ist eine AI Agent.
+Am Ende, ganz ehrlich, und ich arbeite da drin, ist es auch egal, ob es eine AI Agent ist oder ob es einfach nur
+irgendwie ein Prompt ist oder ob es ein Workflow ist oder irgendwas anderes. Am Ende muss halt was bei rumkommen,
+was mir in der Firma hilft, das ist das wichtige. Und das sehen wir jetzt schon, dass ich das verändert und ich glaube,
+am Ende von 26 wird es halt nicht mehr so technisch alles so cool sein, sondern es wird einfach darum gehen,
+okay, wie hilft mir das jetzt? Wie können wir das deployen? Das dritte, was sehr wichtig ist und der
+haben wir schon ein extrem fortschrück gesehen, ist Time to Value. Also wie lange brauche ich jetzt eigentlich um den
+Value, den wir gerade besprochen haben zu heben? Da war es halt so, bisher war immer, ich baue eine Demo, der erste
+Value irgendwie in der Demo, ich kann es mir jetzt mal vorstellen, so und danach der Demo kam halt häufig mal gar nichts,
+weil ich hab es halt nicht in Produktion bekommen und jetzt geht es eigentlich nur darum, okay, von, ich weiß eigentlich,
+worum es geht, das hinzu, ich hab Produkt, das System oder den Agent in Produktion und ich sehe ein Value,
+wie lange ist diese Zeit? Und ist Dorisch, ich glaube, wenn wir in der ersten Agent,
+aber knapp sechs Monate gebraucht ist der wirklich mal so die Partei, ja.
+Auch schon vorher ganz, okay, aber bis jetzt dann würde ich so ohne Beschwerden, dass da keine
+E-Mails bekamen, das hat, da hat wir ich lange gedauert.
+Minowale sind es halt zwei Wochen wirklich in komplexen Cases und in guten Cases sind es halt im
+2 Tage. Und jetzt wird das in Zukunft noch weiter runtergehen, dass eigentlich der menschliche
+Aufwand wirklich minimal ist, dass ich diese Agent extrem schnell depläuen kann, extrem schnell in
+Produktion bekommen und mein Time to Value halt nicht mehr in die Wochen oder Monate ist, sondern
+deutlich schneller. Und das wird 20, 26 der Fokus an.
+Wissen, languagemodels, noch irgendwie besser werden, hat Will das noch einen Impact haben?
+Wir freuen uns immer über weitere Verbesserungen. Gerade ist es eine Qualität,
+wie lange ob die schnell sind, die Modelle und was sind die Kosten, also wieder typisch, wieder
+Bibelvorlesung, stopptimieren muss. Und ich glaube, worauf wir uns freuen, dass wir bessere
+Modelle für geringere Kosten, die auch schneller sind sehen. Weil wir immer momentan schon noch
+Vereine oder die andere Sache optimieren. Also, dann nimmst du am Anfang die teureren Modelle,
+dann ist aber der Prozess teurer und vielleicht auch gar nicht so ein riesen Vorteil.
+Dann bist du auch noch relativ langsam und dann hat's auf einmal eine Zeit von irgendwie
+in 45 Minuten, bis das durchgelaufen ist. Was dann auch nicht geil ist. Und dann,
+dann kostet irgendwie viel. Und ich glaube, da werden wir einfach noch insgesamt eine
+Programme sehen, so dass du halt die günstigeren oder günstigeren Modelle, die auch
+schneller sind, nehmen kannst und offengleichen auch bekommst. Kann man ja schon ein bisschen
+drum spielen, aber es wird sich auf jeden Fall noch noch mehr verbessern.
+Okay, Jonas, vielen vielen Dank. Hat Spaß gemacht. Ich wünsche euch weiterhin ganz viel Erfolg
+und ich möchte noch mal wegen des CEO-Office.
+Ja, gerne schön. Gür mal zusammen durchgehen. Spart mir viel Zeit und macht
+ein auch besser. Hat Spaß gemacht.

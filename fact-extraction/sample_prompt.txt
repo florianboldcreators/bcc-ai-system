@@ -1,0 +1,190 @@
+Analyze these Slack messages from Julia Hopper and extract discrete facts about them.
+
+MESSAGES:
+[2025-11-24T15:55:06.826529] Helloo! Ich dachte mir ich erstell ganz offiziell einen Chat für uns. Sollen wir morgen einen kurzen Vorstellungscall machen? :slightly_smiling_face:
+
+[2026-01-07T10:42:48.128579] Dann machen wir es heute. 14.30?
+
+[2025-09-09T15:40:31.118989] Ne nur das was ich abgelegt hab
+
+[2025-09-18T17:30:33.686929] ich brauch noch eine sekunde von dir
+
+[2025-09-29T10:09:49.968249] glaube BS wird hier nicht besprochen
+
+[2025-10-10T09:20:10.704069] jaa perfekt. sag gerne dann wenn du ready bist, ich schicke es Charly trotzdem rüber. Wäre super, wenn du dann die Captions einsetzen kann
+
+[2025-10-17T10:10:45.797389] das war ja das was ich gestern meinte haha
+
+[2025-10-24T13:54:44.719429] also da wir den Post in die Präsi nehmen "müssen" hätte ich sonst gesagt, packen wir beides rein
+
+[2025-11-06T10:03:48.457799] Sag bescheid, wenn ich unterstützen kann. Ich bin auf jeden Fall fitter als gestern :face_exhaling:
+
+[2025-11-25T17:36:40.929009] scheiße. hat sie sonst eine Mail?
+
+[2025-12-22T11:00:40.434889] wie sollen wir uns aufteilen? also ich muss heute auf jeden fall dann den "workshop" vorbereiten und mache ein PDF mit How-To
+
+[2026-01-22T11:22:01.874859] <https://next.frame.io/auth/refresh?state=0e81f80ab70d085aeece33dafccbce2072f96e634cd770057ddba132eb520023&amp;then=%2Fshare%2Fb21355d6-c989-4839-bdad-83285ec8966d&amp;soft=true|https://next.frame.io/auth/refresh?state=0e81f80ab70d085aeece33dafccbce2072f96e634c[…]then=%2Fshare%2Fb21355d6-c989-4839-bdad-83285ec8966d&amp;soft=true>
+
+[2025-11-25T14:52:41.717879] als die Global Accounts meinst du? sehr cool!
+
+[2025-12-02T12:01:04.090949] dann nutze ich kurz die zeit und mache eine schnelle lunch break, bin gleich wieder da!
+
+[2026-01-14T12:45:00.572439] Du hast ja wahrscheinlich schon mit Marvin gesprochen oder?
+
+[2025-10-30T11:23:37.332519] Hi! Super, danke fürs Connecten! Ich erstelle gerade einen Fragenkatalog und schicke ihn asap hier rein. <@U0994RLAGHW> wäre super, wenn wir diese Fragen dann beantworten können :slightly_smiling_face:
+Terminlich richte ich mich nach euch
+
+[2025-09-30T17:31:23.258729] ja wir hatten das heute auch schon mit Bildern die ich erstellt hatte – AI ist der Feind!!!
+
+[2026-01-14T18:05:11.861199] Naja, ich muss jetzt pünktlich los! Ich meld mich morgen gleich bei dir :slightly_smiling_face: happy evening!
+
+[2026-01-28T10:51:56.910539] Ah okay, der auch als Moderator. dachte nur für den roast aber passt
+
+[2026-02-02T12:53:07.454479] sorry dachte da kommt direkt der link
+
+[2025-09-05T10:18:16.553599] <mailto:julia.hopper@boldcreatorsclub.com|julia.hopper@boldcreatorsclub.com>
+
+[2025-09-17T14:11:28.568909] hier. hätte jetzt den Fragesticker genommen und geschrieben:
+
+Dein Tipp:
+
+[2025-09-22T16:33:28.485889] Dateien liegen hier für dich zum Upload:
+<https://drive.google.com/drive/folders/1tIQugcxuigtB1ukTFc55O-zUavxvx580>
+
+
+Bezüglich der Caption: Ne die Reihenfolge ist so gewollt. Damit wir bei "Amore Motore" auch das Wort Gipfeltreffen in der Caption haben --&gt; ist ja der erste Post der rausgeht.
+Beim Visual "Gipfeltreffen" haben wir dann analog auch wieder Amore Motore textlich aufgegriffen. So haben wir überall alles drin
+
+[2025-09-30T12:41:27.430519] Ich bastel jetzt so gut es geht. Danke fürs Anfragen!
+
+[2025-10-02T12:39:36.690749] ich such gerade dua lipa, deshalb :smile:
+
+[2025-10-08T16:38:45.491299] Also ich hatte das Reel TN jetzt angepasst. Da hatten wir eigentlich das hier:
+
+[2025-10-16T15:14:36.706059] okay dann nehm ich es wieder mit rein
+
+[2025-10-27T16:00:05.253259] auch das "bleibt das Thema halt weiterhin liegen" ja okay, we dont care? :smile:
+
+[2025-11-10T11:45:54.533569] Was ist die EHF? :face_with_peeking_eye:
+
+[2025-12-04T15:04:10.793779] ich kümmere mich "kurz" um Ikea und kann dir dann mehr Infos zum Timing geben
+
+[2026-01-14T16:59:18.307819] also früher oder später wird sie uns die videos zukommen lassen, das glaub ich auf jeden fall :smile:
+
+[2026-01-27T09:55:03.443939] Hier das Feedback von Flo zu den Ideen bei SIXT (IG WORKSHOP).
+
+<@U05LQB4GTC1> Der Dialog bei Love is Blind muss angepasst werden. Hier müssen wir mehr den USP eines Autos rausstellen, mit Stereotyp spielen. Das ist zu generisch noch.
+
+<@U09D64LA420> Flo hätte gerne ein Video Snippet/MockuP (kann AI sein) von einer Love is Blind Szene. Man sollte zuerst die Frau sehen, dann das Reveal mit dem SIXT Auto.
+
+<@U05LQB4GTC1> - wie kriegen wir das Carpool karaoke auf 120 Sekunden? Wie kriegen wir in die 120 Sekunden was rein, was ganz typisch für SIXT ist?
+
+<@U05LQB4GTC1> &amp; <@U09D64LA420> - Habt ihr eine Idee für potenzielle Moderatoren für Carpool Karaoke?
+
+<@U05LQB4GTC1> - Personality Change muss krasser sein. Öko Mutti steigt in einen Benzer, dann rappt sie Haftbefehl mit.
+Macho Typ sterigt in SUV und hat einen Matcha Latte in der Hand und sing DShirin David.
+Welche anderen Ideen hast du? Wir brauchen 7 Ideen...
+
+<@U05LQB4GTC1> - SIXT Pranked (AI Voice) - Hier brauchen wir konkrete Beispiele (bim Popeln erwischt, am Handy, etc)
+<@U09D64LA420> - die die Szene brauchen wir auch ein Video mit einer eingesprochenen Stimme - der Kunde muss sich das vorstellen können.
+
+<@U09D64LA420> - Bitte ein Carousel Ad erstellen mit Dingen, die man nicht sagen sollte - die Ideen sind super, sollten wir nur anskribbeln.
+
+<@U05LQB4GTC1> - das Quiz findet er so etwas zu billig - er will RSAs mit einbeziehen, ählich wie hier: <https://www.youtube.com/watch?v=l9fs06Fw8FY>
+Hier brauchen wir konkrete Fragen.
+
+<@U09D64LA420> Wir brauchen je ein THumbnail zu jeder Idee - damit wri das in ein Instagram Feed mockuppen können.
+
+[2025-10-02T14:52:42.482849] GIF:
+Ja man muss es nur als ein Video exportieren. Also GIF als visuelles bleibt gleich, das Dateiformat ändert sich
+
+Halloween:
+Puh ja, müssten wir halt beim Event dann shooten vorher. Die Sachen einsetzen kann man mit AI easy
+
+Adventskalender: haben sie ja dann :slightly_smiling_face:
+
+Rest: Probleme für die nächste Woche :smile:
+
+[2025-10-09T09:34:21.407439] ich hab das Gefühl wir haben die Front schon soo oft jetzt gezeigt :face_with_spiral_eyes: vllt kann man ja was mit dem material von heute abend machen
+
+[2025-10-16T16:36:13.897849] ahhh verstehe haha
+finde hier das Logo ganz geil so blurry – vllt kann man ja einen Mix zusammen basteln?
+
+[2025-10-29T15:57:17.850679] Hanna kommentiert auch gerade in die BS Präsi
+
+[2025-11-13T11:12:07.094239] jaa hab ich auch gelesen! es gibt ja gottseidank auch so wohnungen die man mieten kann. ich schau mal und erstelle dann eine neue präsi :slightly_smiling_face:
+
+[2025-11-20T17:08:02.686099] okay ich bin bei der Ausarbeitung jetzt nochmal auf das gleiche Thema gestoßen, dass es zB doch das Couple sein muss, statt nur der Freundin. Evtl. müssten wir morgen nochmal alles abgleichen <@U08V6A47PKN>?
+
+[2025-11-25T10:11:13.433369] Kurz zur Abstimmung, was wir gleich im Meeting alles besprechen müssen:
+
+GORENJE
+• Kosten Tiny House --> Angebot weiterleiten von Rückenwind
+• Modulare Küche: zeigen + Idee mit Mietstudio West (<@U093J779DAQ> könntest du hier die Präsi/ Folie  kurz updaten mit allen Infos zu Preis, Zeitraum, Julia's Skizze mit dem modularen Teil – falls noch nicht geschehen?)
+• hierfür Produktfokus (Pizzaofen evtl. noch Staubsauger? für jetzt)
+• Timing KW49/ 50 --> Machbarkeit der Produktlieferungen? 
+• Tiny House --> Kühlschrank?
+HISENSE
+• Feedback zur Präsentation (Content) --> passt alles? 3 Shooting Optionen (Wohnung, HKR, Store)
+• zusätzlich neu: Wohnungen zeigen, Models zeigen
+• Timing: KW 49/50 --> Machbarkeit der Produktlieferungen? (RBG TV, Laser TV's)
+• Sideboard für TV --> Empfehlung?
+• HKR: fehlende Rückmeldung, haben sie noch einen Kontakt? Kosten?
+
+[2025-11-28T17:09:04.029089] Ja das wissen sie der 5.12. Aber hier war ja offen, dass sie die Lieferung noch klären wollen, deshalb frag ich :slightly_smiling_face:
+
+[2025-12-03T16:46:36.455849] Preise waren hier immer so 200-300€ pro Video
+
+[2025-12-08T14:49:20.062119] wir schauen uns die produkte an und checken garnichts hahaha
+
+[2025-12-17T09:00:57.357059] FYI, ich habs jetzt so gemacht ganz grob
+
+[2026-01-07T16:47:35.298119] kann ich gerne eintragen :slightly_smiling_face:
+<@U093J779DAQ> und du postest?
+
+[2026-01-14T12:55:37.447879] genau und auch wie's dort halt aussieht mit Branding usw.
+
+[2026-01-28T09:05:01.642579] Hello! :slightly_smiling_face: Alles oke und bei dir?
+
+[2025-09-12T16:04:21.878619] Liiiiebe das Grid! :slightly_smiling_face:
+
+Beim Highlight – evtl. etwas zu kleinteilig und nicht lesbar? Je nachdem was ihr besprochen habt
+
+[2026-01-28T16:22:47.329449] Wäre mir egal – das was wir sonst bei SIXT auch verwenden?
+
+[2026-01-09T15:46:15.402899] Ja hatte ich auch kurz überlegt. Können wir auf jeden Fall mal auf die Liste setzen :joy: krasser sollten wir jedenfalls nicht mehr werden 
+
+[2025-10-30T14:07:39.823189] FYI beim Brand Store hatten wir für die Rundgang Stories 4 Iterationen – falls du das für die Abrechnung brauchst
+
+---
+
+Extract facts in these categories:
+1. BACKGROUND - Personal info, experience, role
+2. CLIENTS - Client-specific knowledge (Hisense, Gorenje, SIXT, etc.)
+3. FRAMEWORKS - How they approach work, methodologies
+4. QUALITY_BARS - What "good enough" means, their standards
+5. STYLE - Communication patterns, tone, how they write
+6. TOOLS - Software, processes they use
+7. RELATIONSHIPS - Who they work with, team dynamics
+8. OPINIONS - Strong views, preferences
+
+RULES:
+- Each fact should be ONE discrete statement
+- Be specific, not generic
+- Include context when relevant
+- Skip small talk / scheduling noise
+- Focus on insights that would help recreate their work style
+
+OUTPUT FORMAT (JSON):
+{
+  "background": ["fact1", "fact2"],
+  "clients": ["fact1", "fact2"],
+  "frameworks": ["fact1", "fact2"],
+  "quality_bars": ["fact1", "fact2"],
+  "style": ["fact1", "fact2"],
+  "tools": ["fact1", "fact2"],
+  "relationships": ["fact1", "fact2"],
+  "opinions": ["fact1", "fact2"]
+}
+
+Extract facts now:
