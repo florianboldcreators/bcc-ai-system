@@ -1,0 +1,7 @@
+# Large data files - not needed in Claude Code context
+creative-lead/knowledge-base/slack-export/
+creative-lead/knowledge-base/examples/*.pptx
+creative-lead/knowledge-base/examples/*.docx
+transcripts/
+fact-extraction/
+knowledge-base/hopper-facts.json
