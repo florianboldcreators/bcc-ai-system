@@ -67,6 +67,24 @@ def save_state(state: dict):
     STATE_FILE.write_text(json.dumps(state, indent=2, ensure_ascii=False))
 
 
+def check_global_halt() -> bool:
+    """Check if GLOBAL_HALT is active. Returns True if halted."""
+    state = load_state()
+    return state.get("GLOBAL_HALT", False)
+
+
+def set_global_halt(active: bool, reason: str = ""):
+    """Set or clear the global halt flag. CEO kill switch."""
+    state = load_state()
+    state["GLOBAL_HALT"] = active
+    state["halt_reason"] = reason if active else ""
+    state["halt_timestamp"] = datetime.now().isoformat() if active else None
+    save_state(state)
+    status = "🛑 HALTED" if active else "✅ RESUMED"
+    logger.warning(f"{status}: {reason}")
+    return status
+
+
 def update_pipeline(pipeline_id: str, status: str, data: dict = None):
     """Update a pipeline's status."""
     state = load_state()
@@ -219,6 +237,11 @@ All client-facing text in GERMAN."""
 
 def generate_and_judge(brief_text: str, kb_context: str, pipeline_id: str) -> dict:
     """Generate concepts with atomic per-variant calls + quality loop."""
+    if check_global_halt():
+        logger.warning("🛑 GLOBAL_HALT active — aborting pipeline")
+        update_pipeline(pipeline_id, "FAILED", {"reason": "GLOBAL_HALT by CEO"})
+        return {"error": "GLOBAL_HALT active", "pipeline_id": pipeline_id}
+    
     update_pipeline(pipeline_id, "GENERATING")
     track_event("brief_processed")
 
@@ -442,7 +465,7 @@ def process_approval(variant: str, concept_file: str, task_gid: str = "") -> dic
             "output_file": str(output_file),
         }
 
-    # Trigger Ads Specialist (parallel to Producer)
+    # Trigger Ads Specialist (parallel to Producer, with cross-agent context)
     ads_script = SCRIPT_DIR / "ads" / "main.py"
     if ads_script.exists():
         ads_output_dir = SCRIPT_DIR / "ads" / "test-output"
@@ -450,12 +473,18 @@ def process_approval(variant: str, concept_file: str, task_gid: str = "") -> dic
         safe_name = Path(concept_file).stem
         ads_output = ads_output_dir / f"{safe_name}-var{variant}-media-plan.md"
         
+        # Cross-agent context: Pass producer output to ads for coherent messaging
+        producer_context = ""
+        if result.get("producer_output") and Path(result["producer_output"]).exists():
+            producer_context = Path(result["producer_output"]).read_text()[:1000]
+        
         result["steps"].append(f"🎯 Ads Specialist triggered for Variant {variant}")
         result["ads_output"] = str(ads_output)
         result["ads_trigger"] = {
             "concept_file": concept_file,
             "variant": variant,
             "output_file": str(ads_output),
+            "producer_context": producer_context,  # Cross-agent memory
         }
 
     # Add PRODUCER_COMPLETE comment to Asana when package is ready
@@ -504,7 +533,19 @@ def main():
     parser.add_argument("--task-gid", type=str, default="", help="Asana task GID for approval")
     parser.add_argument("--status", action="store_true", help="Show pipeline status")
     parser.add_argument("--metrics", action="store_true", help="Show system metrics")
+    parser.add_argument("--stop", type=str, nargs="?", const="CEO kill switch", help="🛑 HALT all pipelines")
+    parser.add_argument("--resume", action="store_true", help="✅ Resume after halt")
     args = parser.parse_args()
+
+    if args.stop is not None:
+        result = set_global_halt(True, args.stop)
+        print(f"{result}: {args.stop}")
+        return
+
+    if args.resume:
+        result = set_global_halt(False)
+        print(result)
+        return
 
     if args.status:
         show_status()

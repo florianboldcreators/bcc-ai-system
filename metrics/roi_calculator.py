@@ -102,6 +102,8 @@ CLONES_BUILT = {
     "Producer": {"status": "v0.1.0-draft", "automation_pct": 40, "monthly_savings": 1800},
     "Editor": {"status": "v0.1.0-draft", "automation_pct": 30, "monthly_savings": 1050},
     "LLM Judge": {"status": "v1.0", "automation_pct": 90, "monthly_savings": 2000},
+    "Community Manager": {"status": "v0.1.0", "automation_pct": 50, "monthly_savings": 1500},
+    "Ads Specialist": {"status": "v0.1.0", "automation_pct": 45, "monthly_savings": 1800},
 }
 
 
@@ -211,7 +213,7 @@ def generate_report(savings: dict, metrics: dict) -> str:
         report += f"| {role} | ✅ Built | {data['status']} | [{bar}] {data['automation_pct']}% | €{data['monthly_savings']:,} |\n"
     
     # Unbuilt roles
-    unbuilt = ["Community Manager", "Ads Specialist", "Account Manager", "Strategy"]
+    unbuilt = [r for r in ["Community Manager", "Ads Specialist", "Account Manager", "Strategy"] if r not in CLONES_BUILT]
     for role in unbuilt:
         report += f"| {role} | ⏳ Planned | — | [░░░░░░░░░░] 0% | — |\n"
     
