@@ -96,7 +96,39 @@ James extrahiert den Text, erstellt Embeddings und aktualisiert die Datenbank.
 
 ---
 
-## 5. Was die AI NICHT kann
+## 5. Der Producer (automatisch nach Approval)
+
+Wenn du ein Konzept mit **✅ B** approves, passiert automatisch:
+1. Asana-Task → "Concept Approved"
+2. Der **Producer Agent** generiert ein Production Package:
+   - 📋 Shot List (jeder einzelne Shot mit Location + Equipment)
+   - 🎥 Equipment-Liste (spezifische Kamera-Modelle + Objektive)
+   - 📅 Tagesplan (Stunde für Stunde)
+   - 💰 Budget (basierend auf echten Münchner 2026 Tagessätzen)
+   - 👤 Talent Brief (Casting-Beschreibung)
+   - ⚠️ Risk Assessment
+3. Du bekommst das Package auf Telegram
+
+**Münchner Preise sind eingebaut:** DoP €800-1.200/Tag, Studio €500-1.000, Drohne €500-800, etc.
+
+---
+
+## 6. Der Editor (nach dem Dreh)
+
+Wenn das Rohmaterial da ist:
+1. Verschiebe die Asana-Task nach **"Raw Footage Ready"**
+2. Der **Editor Agent** generiert einen Post-Production Blueprint:
+   - ⏱️ Sekunde-für-Sekunde Schnittplan
+   - 🔊 Sound Design (jeder Audio-Layer einzeln)
+   - 🎨 Color Grading (Farbtemperatur, LUT, Skin Tones)
+   - 📝 Text Overlays (Font, Größe, Position, Animation)
+   - 📊 Retention Triggers (wo Zuschauer abspringen könnten)
+   - 📦 Export Settings (Codec, Bitrate, LUFS pro Plattform)
+3. Ein Junior Editor kann den Blueprint 1:1 in Premiere Pro umsetzen
+
+---
+
+## 8. Was die AI NICHT kann
 
 - ❌ Echte Trend-Recherche (nutzt Wissen bis Trainings-Cutoff)
 - ❌ Footage drehen oder bearbeiten
@@ -108,7 +140,7 @@ Die AI ersetzt die **Konzept-Erstellung**, nicht das **kreative Urteil**. Du bis
 
 ---
 
-## 6. Kosten
+## 9. Kosten
 
 | Posten | Kosten/Monat |
 |--------|-------------|
