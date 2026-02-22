@@ -86,11 +86,24 @@ def add_comment(task_gid: str, text: str) -> bool:
     return bool(result)
 
 
-def handle_approve(task_gid: str, variant: str):
-    """Handle approval: move task + add comment."""
+def handle_approve(task_gid: str, variant: str, concept_file: str = ""):
+    """Handle approval: move task + add comment + trigger Producer."""
     move_task(task_gid, "Concept Approved")
     add_comment(task_gid, f"✅ Variant {variant} approved by CEO via Telegram ({datetime.now().strftime('%Y-%m-%d %H:%M')})")
     print(f"✅ Variant {variant} approved, task moved to 'Concept Approved'")
+    
+    # AUTO-TRIGGER PRODUCER CLONE
+    if concept_file:
+        producer_script = Path(__file__).parent.parent.parent / "producer" / "main.py"
+        output_dir = Path(__file__).parent.parent / "test-output" / "packages"
+        output_dir.mkdir(parents=True, exist_ok=True)
+        
+        safe_name = Path(concept_file).stem
+        output_file = output_dir / f"{safe_name}-var{variant}-package.md"
+        
+        print(f"🏗️ AUTO-TRIGGERING PRODUCER for Variant {variant}...")
+        print(f"PRODUCER_TRIGGER:{concept_file}|{variant}|{output_file}")
+        # The calling agent (James) reads PRODUCER_TRIGGER and runs producer/main.py
 
 
 def handle_reject(task_gid: str, reason: str = ""):
