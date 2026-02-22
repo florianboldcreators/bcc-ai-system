@@ -32,7 +32,17 @@ BRIEFS_DIR = PROJECT_ROOT / "knowledge-base" / "raw_data" / "briefs"
 SYNC_STATE_FILE = SCRIPT_DIR / ".asana_sync_state.json"
 
 # Sections that contain new briefs (case-insensitive matching)
-NEW_BRIEF_SECTIONS = ["new brief", "new briefs", "neue briefs", "incoming", "to concept"]
+NEW_BRIEF_SECTIONS = ["new brief", "new briefs", "neue briefs", "incoming", "to concept", "general", "🗂️ general", "📂 general"]
+
+# Shadow mode: Real production projects to monitor
+SHADOW_MODE_PROJECTS = {
+    "1211046661939568": "🖥️ Hisense",
+    "1211046662010247": "🧡🚘 SIXT",
+    "1212808160983275": "🍳Gorenje Dashboard",
+}
+
+# Delivery is ALWAYS private to CEO Telegram only
+SHADOW_MODE = True  # When True, never post to team channels
 
 
 def asana_get(endpoint: str, params: dict = None) -> dict:
