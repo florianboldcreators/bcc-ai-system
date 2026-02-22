@@ -30,7 +30,51 @@
       "brief_file": "creative-lead/knowledge-base/raw_data/briefs/mini-cooper-spring-2026.md",
       "brief_name": "mini-cooper-spring-2026",
       "attempt": 3
+    },
+    "mini-20260222-184627": {
+      "created": "2026-02-22T18:46:27.170720",
+      "history": [
+        {
+          "status": "NEW",
+          "timestamp": "2026-02-22T18:46:27.170725"
+        },
+        {
+          "status": "GENERATING",
+          "timestamp": "2026-02-22T18:46:33.256673"
+        },
+        {
+          "status": "GENERATING",
+          "timestamp": "2026-02-22T18:46:33.257188"
+        },
+        {
+          "status": "GENERATING",
+          "timestamp": "2026-02-22T18:47:23.910264"
+        },
+        {
+          "status": "GENERATING",
+          "timestamp": "2026-02-22T18:48:13.053359"
+        },
+        {
+          "status": "JUDGING",
+          "timestamp": "2026-02-22T18:49:10.789979"
+        },
+        {
+          "status": "READY",
+          "timestamp": "2026-02-22T18:51:03.752548"
+        }
+      ],
+      "status": "READY",
+      "updated": "2026-02-22T18:51:03.752543",
+      "client": "MINI",
+      "brief_file": "creative-lead/knowledge-base/raw_data/briefs/mini-cooper-spring-2026.md",
+      "brief_name": "mini-cooper-spring-2026",
+      "attempt": 1,
+      "current_variant": "C",
+      "progress": "Variant C (Bold)",
+      "concept_file": "/private/tmp/bcc-ai-system/creative-lead/test-output/pipeline/mini-20260222-184627-concepts.md",
+      "scores_file": "/private/tmp/bcc-ai-system/creative-lead/test-output/pipeline/mini-20260222-184627-scores.json",
+      "all_passed": true
     }
   },
-  "last_updated": "2026-02-22T18:43:40.905804"
+  "last_updated": "2026-02-22T18:51:03.752552"
 }

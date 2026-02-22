@@ -141,6 +141,51 @@ def call_claude_atomic(prompt: str, timeout: int = 90, retries: int = 1) -> str:
     return ""
 
 
+def parse_judge_response(raw: str) -> dict:
+    """Bulletproof JSON parser for judge responses. Handles conversational wrapping."""
+    # Strip markdown code blocks
+    cleaned = re.sub(r'```json\s*', '', raw)
+    cleaned = re.sub(r'```\s*', '', cleaned)
+    
+    # Strategy 1: Find JSON object with "verdict" key
+    match = re.search(r'\{[^{}]*"verdict"[^{}]*\}', cleaned, re.DOTALL)
+    if match:
+        try:
+            return json.loads(match.group())
+        except json.JSONDecodeError:
+            pass
+    
+    # Strategy 2: Find ANY JSON object with "weighted_average"
+    match = re.search(r'\{[^{}]*"weighted_average"[^{}]*\}', cleaned, re.DOTALL)
+    if match:
+        try:
+            return json.loads(match.group())
+        except json.JSONDecodeError:
+            pass
+    
+    # Strategy 3: Find the LARGEST JSON-like block
+    match = re.search(r'\{.*\}', cleaned, re.DOTALL)
+    if match:
+        try:
+            return json.loads(match.group())
+        except json.JSONDecodeError:
+            pass
+    
+    # Strategy 4: Extract numbers from text as fallback
+    score_match = re.search(r'(\d\.\d)\s*/\s*5', cleaned)
+    verdict_match = re.search(r'(PASS|REVISE|REJECT)', cleaned, re.IGNORECASE)
+    if score_match:
+        return {
+            "variant": "?",
+            "weighted_average": float(score_match.group(1)),
+            "verdict": verdict_match.group(1).upper() if verdict_match else "REVISE",
+            "one_line_summary": cleaned[:200].replace('"', "'"),
+            "red_flags": [],
+        }
+    
+    return None  # Truly unparseable
+
+
 def generate_single_variant(brief_text: str, kb_context: str, variant_type: str,
                             variant_letter: str, revision_note: str = "") -> str:
     """Generate a SINGLE variant atomically (shorter prompt, faster response)."""
@@ -226,20 +271,23 @@ Return ONLY one JSON object: {{"variant":"A","title":"...","weighted_average":2.
 
             judge_raw = call_claude_atomic(judge_prompt, timeout=60, retries=1)
             if judge_raw:
-                judge_raw = re.sub(r'```json\s*', '', judge_raw)
-                judge_raw = re.sub(r'```\s*', '', judge_raw)
-                try:
-                    match = re.search(r'\{.*"verdict".*?\}', judge_raw, re.DOTALL)
-                    if match:
-                        score = json.loads(match.group())
-                        scores.append(score)
-                        v = score.get("variant", "?")
-                        avg = score.get("weighted_average", 0)
-                        verdict = score.get("verdict", "?")
-                        logger.info(f"  ⚖️ Variant {v}: {avg}/5 {verdict}")
-                        track_event("concept_scored", {"score": float(avg), "verdict": verdict})
-                except:
-                    logger.warning("Judge parse failed for a variant")
+                score = parse_judge_response(judge_raw)
+                if score:
+                    scores.append(score)
+                    v = score.get("variant", "?")
+                    avg = score.get("weighted_average", 0)
+                    verdict = score.get("verdict", "?")
+                    logger.info(f"  ⚖️ Variant {v}: {avg}/5 {verdict}")
+                    track_event("concept_scored", {"score": float(avg), "verdict": verdict})
+                else:
+                    logger.warning("Judge parse failed — assigning default REVISE score")
+                    scores.append({
+                        "variant": variant_text[:50].split("Variant")[-1].strip()[:1] if "Variant" in variant_text[:50] else "?",
+                        "weighted_average": 2.8,
+                        "verdict": "REVISE",
+                        "one_line_summary": "Judge parse failed — manual review recommended",
+                        "red_flags": ["parse_failure"],
+                    })
 
         best_concepts = concepts
         best_scores = scores

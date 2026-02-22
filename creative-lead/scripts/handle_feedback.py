@@ -106,7 +106,18 @@ def auto_learn_from_approval(concept_file: str, variant: str):
                 k, v = line.split(":", 1)
                 meta[k.strip()] = v.strip().strip('"\'')
     
-    client = meta.get("client", "unknown")
+    client = meta.get("client", "")
+    if not client or client in ("Unknown", "unknown", ""):
+        # Detect from content
+        known = ["MINI", "Porsche", "SIXT", "Hisense", "Gorenje", "Decathlon",
+                 "Bitpanda", "N26", "Cooper", "Taycan", "Macan"]
+        brand_map = {"Cooper": "MINI", "Taycan": "Porsche", "Macan": "Porsche"}
+        for c in known:
+            if c.lower() in concept_text.lower():
+                client = brand_map.get(c, c)
+                break
+        if not client:
+            client = "unknown"
     
     # Save as golden example
     golden_dir = Path(__file__).parent.parent / "knowledge-base" / "raw_data" / "concepts"

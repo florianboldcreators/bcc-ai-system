@@ -1,0 +1,48 @@
+[
+  {
+    "variant": "A",
+    "title": "Mein letztes Accessoire",
+    "scores": {
+      "on_brief": 4,
+      "platform_fit": 5,
+      "scroll_stop_hook": 4,
+      "brand_voice": 4,
+      "trend_relevance": 4,
+      "visual_clarity": 5,
+      "german_quality": 4,
+      "differentiation": 4
+    },
+    "weighted_average": 4.3,
+    "verdict": "APPROVE WITH NOTES",
+    "one_line_summary": "Strategisch sauberes GRWM-Subversion-Konzept mit exzellentem Storyboard — hohe Produzierbarkeit, starke Markenlogik, aber Hook-Mechanik ist bewährte Formel statt echte Innovation.",
+    "red_flags": [
+      "Storyboard bricht bei Sek. 13–17 ab — finaler CTA/Endcard fehlt komplett",
+      "GRWM-Subversion ist kein frischer Trick mehr, Format-Twist wurde 2024/25 inflationär genutzt",
+      "'bestes piece steht draußen' telegrafiert die Auflösung für TikTok-Natives zu früh — Curiosity Gap hält max. 2s",
+      "Kein Conversion-Mechanic: weder Swipe-Up, Kommentar-CTA noch Community-Hook am Ende"
+    ]
+  },
+  {
+    "variant": "C",
+    "title": "Kein Auto.",
+    "scores": {
+      "on_brief": 4,
+      "platform_fit": 2,
+      "scroll_stop_hook": 4,
+      "brand_voice": 3,
+      "trend_relevance": 3,
+      "visual_clarity": 4,
+      "german_quality": 4,
+      "differentiation": 5
+    },
+    "weighted_average": 3.6,
+    "verdict": "REFINE",
+    "one_line_summary": "Bold category-denial concept with strong differentiation but serious TikTok platform mismatch and incomplete storyboard.",
+    "red_flags": [
+      "Storyboard cuts off at 22s — missing 10-18s of a 30-40s concept, no CTA or resolution",
+      "Deadpan-serious tone with gallery murmurs is anti-TikTok; this is an art-house Instagram film forced onto a dopamine platform",
+      "MINI's brand voice is cheeky and playful — 'kein Augenzwinkern' actively contradicts brand DNA",
+      "Magritte pastiche ('Ceci n'est pas une pipe') is a known reference that could read as derivative rather than original"
+    ]
+  }
+]
