@@ -34,6 +34,9 @@ SYNC_STATE_FILE = SCRIPT_DIR / ".asana_sync_state.json"
 # Sections that contain new briefs (case-insensitive matching)
 NEW_BRIEF_SECTIONS = ["new brief", "new briefs", "neue briefs", "incoming", "to concept", "general", "🗂️ general", "📂 general"]
 
+# Section that triggers the Editor clone
+RAW_FOOTAGE_SECTIONS = ["raw footage ready", "footage ready", "rohmaterial fertig", "post-production"]
+
 # Shadow mode: Real production projects to monitor
 SHADOW_MODE_PROJECTS = {
     "1211046661939568": "🖥️ Hisense",
