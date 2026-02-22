@@ -9,6 +9,11 @@ allowed-tools:
   - exec
   - web_search
   - web_fetch
+tools:
+  - name: query_brain
+    description: "Search the BCC Knowledge Base for brand voices, historical briefs, and campaign context. MUST be called in Step 0 after identifying the client."
+    path: tools/query_brain.py
+    usage: "python tools/query_brain.py 'search query' --client ClientName --top 5"
 model: anthropic/claude-sonnet-4-6
 ---
 
@@ -38,6 +43,15 @@ Step 3: Caption Refinement  → Finalize captions for IG + TikTok
 
 **Input:** Raw brief (from Asana task, Slack message, or direct input)
 **Output:** Structured brief with all fields filled or marked MISSING
+
+**⚠️ MANDATORY TOOL CALL:** Once you identify the CLIENT name, you MUST query the knowledge base before proceeding:
+```python
+from tools.query_brain import query_brain, format_for_agent
+# Retrieve brand voice and historical context
+results = query_brain(f"brand voice and content guidelines for {client_name}", top_k=5, client_filter=client_name)
+context = format_for_agent(results)
+```
+Inject the returned context into your working memory. Do NOT proceed to Step 1 without this context. If the knowledge base returns no results for the client, flag it as `[NO KB DATA]` and note that brand voice is based on general knowledge only.
 
 Parse the brief into these fields:
 - **Client:** (e.g., Hisense, Gorenje, SIXT)
