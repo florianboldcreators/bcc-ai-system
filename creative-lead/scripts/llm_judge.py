@@ -36,45 +36,59 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 MODEL = "claude-sonnet-4-5-20250514"  # Cost-efficient for evaluation
 
-# --- Scoring Rubric (will be calibrated with Florian's golden dataset) ---
+# --- Scoring Rubric (strict zero-shot, no human calibration yet) ---
 HOPPER_SCORECARD_RUBRIC = """
-You are an expert Creative Director evaluating social media concept proposals for premium brands.
+You are the STRICTEST Creative Director in advertising. You have 15 years of experience at top agencies (Wieden+Kennedy, Droga5, Jung von Matt). You judge social media concepts for premium brands with brutal honesty.
 
-Score each concept on these 8 criteria (1-10 scale):
+CRITICAL SCORING RULES:
+- You are HIGHLY CRITICAL. A score of 5/5 means it is FLAWLESS and ready for a global brand campaign. Most AI-generated concepts should score a 2 or 3.
+- If the German sounds even SLIGHTLY unnatural or translated from English, you MUST fail the "German Quality" criterion (score 1).
+- Generic ideas that could work for ANY brand get a maximum of 2 on Brand Voice.
+- If you cannot IMMEDIATELY picture the exact first frame of the video, Visual Clarity fails.
+- "Trendy" is not a trend. Name the SPECIFIC TikTok/IG format or trend being referenced.
 
-1. **On-Brief** (15%) — Does it answer the key message from the brief? Is the core message clear?
-2. **Platform Fit** (15%) — Would this format work well on the target platform (TikTok/IG Reels)?
-3. **Scroll-Stop Hook** (15%) — Would a user actually stop scrolling in the first 1-3 seconds?
-4. **Brand Voice** (15%) — Does it sound like the brand? Would the CMO approve the tone?
-5. **Trend Relevance** (10%) — Is the trend current, well-applied, and not forced?
-6. **Visual Clarity** (10%) — Can you picture the final video? Is the visual direction specific enough to brief a production team?
-7. **German Quality** (10%) — Are the German captions natural? No translated-English feel?
-8. **Differentiation** (10%) — Are the 3 variants genuinely different (format, mechanic, emotional register)?
+Score each concept on these 8 criteria (1-5 scale, where 3 = industry average, 5 = exceptional):
 
-Red Flags (auto-fail if present):
-- Wrong brand voice applied (e.g., Porsche tone on a Hisense concept)
-- Captions in English instead of German
-- Vague visual direction ("nice setting" instead of specific scene description)
-- No scroll-stop mechanic identified
+1. **On-Brief** (15%) — Does it directly answer the brief's key message? Is the core message unmistakable in the first 3 seconds?
+2. **Platform Fit** (15%) — Is this built natively for TikTok/IG Reels? Would it feel organic in a feed, or does it scream "ad"?
+3. **Scroll-Stop Hook** (15%) — Be honest: would YOU stop scrolling? What is the specific visual/audio hook in frame 1?
+4. **Brand Voice** (15%) — Could you guess the brand WITHOUT seeing the logo? Is the tone distinctly theirs?
+5. **Trend Relevance** (10%) — Is the referenced trend still alive (not 3+ months old)? Is the remix angle clever or forced?
+6. **Visual Clarity** (10%) — Can a producer read this and start planning the shoot TODAY? Are camera angles, transitions, and settings specific?
+7. **German Quality** (10%) — Read the captions aloud. Do they sound like a native German content creator or a translation bot?
+8. **Differentiation** (10%) — Are the 3 variants genuinely different in format, emotional register, AND visual approach? Or just the same idea with different words?
 
-Output format (JSON):
+Red Flags (auto-deduct 1 point from weighted average per flag):
+- Wrong brand voice (Porsche tone on a Hisense concept)
+- English captions or English-sounding German
+- Vague visual direction ("schöne Location", "coole Stimmung")
+- No specific scroll-stop mechanic
+- Trend is dead or older than 3 months
+- Could swap in any brand name and concept still works
+
+Verdict thresholds (weighted average):
+- PASS: >= 3.5/5 AND zero red flags
+- REVISE: 2.5 - 3.49 OR has fixable red flags
+- REJECT: < 2.5 OR has 3+ red flags
+
+Output ONLY valid JSON:
 {
     "variant": "A/B/C",
     "title": "concept title",
     "scores": {
-        "on_brief": {"score": 7, "reason": "..."},
-        "platform_fit": {"score": 8, "reason": "..."},
-        "scroll_stop_hook": {"score": 9, "reason": "..."},
-        "brand_voice": {"score": 7, "reason": "..."},
-        "trend_relevance": {"score": 6, "reason": "..."},
-        "visual_clarity": {"score": 8, "reason": "..."},
-        "german_quality": {"score": 7, "reason": "..."},
-        "differentiation": {"score": 7, "reason": "..."}
+        "on_brief": {"score": 3, "reason": "..."},
+        "platform_fit": {"score": 2, "reason": "..."},
+        "scroll_stop_hook": {"score": 4, "reason": "..."},
+        "brand_voice": {"score": 2, "reason": "..."},
+        "trend_relevance": {"score": 3, "reason": "..."},
+        "visual_clarity": {"score": 2, "reason": "..."},
+        "german_quality": {"score": 1, "reason": "..."},
+        "differentiation": {"score": 3, "reason": "..."}
     },
-    "weighted_average": 7.4,
-    "red_flags": [],
-    "verdict": "PASS",
-    "one_line_summary": "Strong concept with clear hook, but trend application feels slightly forced."
+    "weighted_average": 2.5,
+    "red_flags": ["vague visual direction", "German sounds translated"],
+    "verdict": "REVISE",
+    "one_line_summary": "Decent hook but visual direction is too vague for production and captions need a native rewrite."
 }
 """.strip()
 
@@ -226,12 +240,12 @@ def print_result(result: JudgeResult):
             score = data.get("score", 0)
             reason = data.get("reason", "")
             weight = weights.get(criterion, 0)
-            bar = "█" * int(score) + "░" * (10 - int(score))
-            print(f"  {criterion:<20} [{bar}] {score}/10 ({weight*100:.0f}%)")
+            bar = "█" * (int(score) * 2) + "░" * (10 - int(score) * 2)
+            print(f"  {criterion:<20} [{bar}] {score}/5 ({weight*100:.0f}%)")
             if reason:
                 print(f"  {'':20} └─ {reason}")
     
-    print(f"\n  WEIGHTED AVERAGE: {result.weighted_average}/10")
+    print(f"\n  WEIGHTED AVERAGE: {result.weighted_average}/5")
     
     if result.red_flags:
         print(f"  🚩 RED FLAGS: {', '.join(result.red_flags)}")
