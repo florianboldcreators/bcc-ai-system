@@ -11,6 +11,8 @@ Produce exactly 3 concept variants from the structured brief + selected trends.
 - Think: "This will definitely perform at baseline"
 - Best for: maintaining consistent content output
 
+> **⚠️ CRITICAL:** "Safe" refers ONLY to production complexity and using highly proven, standard formats. It DOES NOT mean generic. The brand voice, edge, and attitude must remain at 100%. A "Safe" concept must still be disruptive enough to stop the scroll. Never write a concept that could work for a competitor. If you swap the brand name and it still works — it's too generic. Rewrite.
+
 ### Variant B — Sweet Spot
 - Trending format with a smart brand twist
 - Highest expected ROI — timely but not reckless
