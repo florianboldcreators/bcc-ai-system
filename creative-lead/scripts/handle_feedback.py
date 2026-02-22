@@ -86,11 +86,88 @@ def add_comment(task_gid: str, text: str) -> bool:
     return bool(result)
 
 
+def auto_learn_from_approval(concept_file: str, variant: str):
+    """Ingest approved concept back into KB as a golden example."""
+    import re
+    
+    concept_text = Path(concept_file).read_text(encoding="utf-8")
+    
+    # Extract the approved variant
+    pattern = rf'(##\s*Variant\s+{variant}\b.*?)(?=##\s*Variant\s+[A-C]|\Z)'
+    match = re.search(pattern, concept_text, re.DOTALL)
+    variant_text = match.group(1).strip() if match else concept_text
+    
+    # Extract metadata
+    meta = {}
+    fm = re.match(r'^---\s*\n(.*?)\n---', concept_text, re.DOTALL)
+    if fm:
+        for line in fm.group(1).split("\n"):
+            if ":" in line:
+                k, v = line.split(":", 1)
+                meta[k.strip()] = v.strip().strip('"\'')
+    
+    client = meta.get("client", "unknown")
+    
+    # Save as golden example
+    golden_dir = Path(__file__).parent.parent / "knowledge-base" / "raw_data" / "concepts"
+    golden_dir.mkdir(parents=True, exist_ok=True)
+    
+    date_str = datetime.now().strftime("%Y-%m-%d")
+    safe_name = re.sub(r'[^a-z0-9-]', '', client.lower())
+    golden_file = golden_dir / f"golden-{safe_name}-{date_str}-var{variant}.md"
+    
+    golden_content = f"""---
+status: golden_example
+source: approved_concept
+client: "{client}"
+variant: "{variant}"
+approved_at: "{datetime.now().isoformat()}"
+original_file: "{Path(concept_file).name}"
+---
+
+# ✅ APPROVED CONCEPT — {client} Variant {variant}
+
+*This concept was approved by the CEO. Use it as a quality reference for future {client} briefs.*
+
+{variant_text}
+"""
+    
+    golden_file.write_text(golden_content, encoding="utf-8")
+    print(f"🧠 Auto-learned: Saved golden example → {golden_file.name}")
+    
+    # Re-run ingestion to add to vector DB
+    ingest_script = Path(__file__).parent / "ingest_rag.py"
+    if ingest_script.exists():
+        import subprocess
+        try:
+            r = subprocess.run(
+                ["python3", str(ingest_script)],
+                capture_output=True, text=True, timeout=60,
+                cwd=str(Path(__file__).parent.parent.parent)
+            )
+            new_chunks = re.search(r'New chunks: (\d+)', r.stdout)
+            if new_chunks:
+                print(f"🧠 KB updated: +{new_chunks.group(1)} chunks")
+            else:
+                print(f"🧠 KB ingestion ran (no new chunks)")
+        except Exception as e:
+            print(f"⚠️ KB ingestion failed: {e}")
+    
+    return str(golden_file)
+
+
 def handle_approve(task_gid: str, variant: str, concept_file: str = ""):
-    """Handle approval: move task + add comment + trigger Producer."""
+    """Handle approval: move task + add comment + trigger Producer + auto-learn."""
     move_task(task_gid, "Concept Approved")
     add_comment(task_gid, f"✅ Variant {variant} approved by CEO via Telegram ({datetime.now().strftime('%Y-%m-%d %H:%M')})")
     print(f"✅ Variant {variant} approved, task moved to 'Concept Approved'")
+    
+    # AUTO-LEARN: Ingest approved concept as golden example
+    if concept_file:
+        try:
+            auto_learn_from_approval(concept_file, variant)
+        except Exception as e:
+            print(f"⚠️ Auto-learn failed: {e}")
     
     # AUTO-TRIGGER PRODUCER CLONE
     if concept_file:
