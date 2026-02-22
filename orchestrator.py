@@ -112,148 +112,152 @@ def query_knowledge_base(client: str) -> str:
         return ""
 
 
-def generate_and_judge(brief_text: str, kb_context: str, pipeline_id: str) -> dict:
-    """Generate concepts with quality loop (auto-retry on failure)."""
-    update_pipeline(pipeline_id, "GENERATING")
-    track_event("brief_processed")
-    
-    # Use Claude CLI for generation
-    skill_path = SCRIPT_DIR / "creative-lead" / "SKILL.md"
-    skill_body = ""
-    if skill_path.exists():
-        text = skill_path.read_text()
-        if text.startswith("---"):
-            parts = text.split("---", 2)
-            if len(parts) >= 3:
-                skill_body = parts[2][:2000]
-
-    max_retries = 2
-    best_concepts = ""
-    best_scores = []
-    revision_feedback = ""
-
-    for attempt in range(1, max_retries + 2):
-        logger.info(f"Generation attempt {attempt}/{max_retries + 1}")
-        update_pipeline(pipeline_id, "GENERATING", {"attempt": attempt})
-
-        # Build prompt
-        revision_section = ""
-        if revision_feedback:
-            revision_section = f"\n## PREVIOUS ATTEMPT FAILED\n{revision_feedback}\nFix these issues.\n"
-
-        prompt = f"""{skill_body[:1500]}
-
-{revision_section}
-
-## Brand Context
-{kb_context[:1500] if kb_context else "No specific context."}
-
-## Brief
-{brief_text}
-
-Generate 3 concept variants (A=Safe but distinctive, B=Sweet Spot, C=Bold).
-Each with: Hook, Visual Direction, Script/Storyboard, Text Overlays, Caption, Hashtags, Production Notes.
-All captions in German. Start each with '## Variant A/B/C — Title'."""
-
-        # Generate via Claude CLI
-        import tempfile
+def call_claude_atomic(prompt: str, timeout: int = 90, retries: int = 1) -> str:
+    """Call Claude CLI with a single atomic prompt. Kills and retries on timeout."""
+    import tempfile
+    for attempt in range(1, retries + 2):
         with tempfile.NamedTemporaryFile(mode='w', suffix='.md', delete=False) as tf:
             tf.write(prompt)
             tf_path = tf.name
-
         try:
             r = subprocess.run(
-                f'cat "{tf_path}" | claude -p - --allowedTools Read',
-                shell=True, capture_output=True, text=True, timeout=180
+                f'cat "{tf_path}" | claude -p -',
+                shell=True, capture_output=True, text=True, timeout=timeout
             )
-            concepts = (r.stdout or "").strip()
             os.unlink(tf_path)
+            output = (r.stdout or "").strip()
+            if output:
+                return output
+            logger.warning(f"Empty Claude response (attempt {attempt})")
         except subprocess.TimeoutExpired:
-            logger.warning(f"Claude timeout on attempt {attempt}")
+            logger.warning(f"Claude timeout {timeout}s (attempt {attempt})")
             track_event("api_error")
             try: os.unlink(tf_path)
             except: pass
-            continue
         except Exception as e:
             logger.error(f"Claude error: {e}")
-            track_event("api_error")
-            continue
-
-        if not concepts:
-            logger.warning("Empty generation response")
-            continue
-
-        track_event("concept_generated", {"count": 3})
-
-        # Judge
-        update_pipeline(pipeline_id, "JUDGING", {"attempt": attempt})
-        judge_prompt = f"""STRICT Creative Director. Score 1-5 (3=avg). Return ONLY JSON array.
-8 criteria: on_brief, platform_fit, scroll_stop_hook, brand_voice, trend_relevance, visual_clarity, german_quality, differentiation.
-
-{concepts[:3000]}
-
-JSON array only, one object per variant with: variant, title, weighted_average, verdict, one_line_summary, red_flags."""
-
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.md', delete=False) as tf:
-            tf.write(judge_prompt)
-            tf_path = tf.name
-
-        try:
-            r = subprocess.run(
-                f'cat "{tf_path}" | claude -p - --allowedTools Read',
-                shell=True, capture_output=True, text=True, timeout=120
-            )
-            judge_raw = (r.stdout or "").strip()
-            os.unlink(tf_path)
-        except:
-            logger.warning("Judge call failed")
             try: os.unlink(tf_path)
             except: pass
-            best_concepts = concepts
-            break
+    return ""
 
-        # Parse judge results
-        judge_raw = re.sub(r'```json\s*', '', judge_raw)
-        judge_raw = re.sub(r'```\s*', '', judge_raw)
+
+def generate_single_variant(brief_text: str, kb_context: str, variant_type: str,
+                            variant_letter: str, revision_note: str = "") -> str:
+    """Generate a SINGLE variant atomically (shorter prompt, faster response)."""
+    variant_desc = {
+        "Safe": "SAFE — Proven format, low production risk. BUT still brand-distinctive, NOT generic. If you swap the brand name and it still works, rewrite.",
+        "Sweet Spot": "SWEET SPOT — Trending format with smart brand twist. Highest expected ROI. This is the one you'd recommend.",
+        "Bold": "BOLD — Experimental, might polarize. High risk, high reward. Something no competitor would dare.",
+    }
+
+    revision = f"\n⚠️ PREVIOUS VERSION FAILED: {revision_note}\nFix these issues.\n" if revision_note else ""
+
+    prompt = f"""You are BCC Creative Lead. Generate ONE concept variant for this brief.
+
+{revision}
+## Brand Context (from Knowledge Base)
+{kb_context[:800] if kb_context else "No brand data."}
+
+## Brief
+{brief_text[:1500]}
+
+## YOUR TASK
+Generate ONLY **Variant {variant_letter} ({variant_type})**: {variant_desc.get(variant_type, variant_type)}
+
+Include: Hook (1-3s), Visual Direction, Script/Storyboard table, Text Overlays (German), Caption (German), Hashtags, Production Notes.
+Start with: ## Variant {variant_letter} — "Title"
+All client-facing text in GERMAN."""
+
+    return call_claude_atomic(prompt, timeout=90, retries=1)
+
+
+def generate_and_judge(brief_text: str, kb_context: str, pipeline_id: str) -> dict:
+    """Generate concepts with atomic per-variant calls + quality loop."""
+    update_pipeline(pipeline_id, "GENERATING")
+    track_event("brief_processed")
+
+    max_retries = 2
+    variants_config = [("A", "Safe"), ("B", "Sweet Spot"), ("C", "Bold")]
+    best_concepts = ""
+    best_scores = []
+    revision_notes = {"A": "", "B": "", "C": ""}
+
+    for attempt in range(1, max_retries + 2):
+        logger.info(f"Generation attempt {attempt}/{max_retries + 1}")
         
-        scores = []
-        try:
-            match = re.search(r'\[.*\]', judge_raw, re.DOTALL)
-            if match:
-                scores = json.loads(match.group())
-        except:
-            pass
-
-        if not scores:
-            logger.warning("Could not parse judge scores")
-            best_concepts = concepts
-            break
-
-        # Track scores
-        for s in scores:
-            track_event("concept_scored", {
-                "score": float(s.get("weighted_average", 0)),
-                "verdict": s.get("verdict", "?")
+        all_variants = []
+        for letter, vtype in variants_config:
+            update_pipeline(pipeline_id, "GENERATING", {
+                "attempt": attempt,
+                "current_variant": letter,
+                "progress": f"Variant {letter} ({vtype})"
             })
+            logger.info(f"  Generating Variant {letter} ({vtype})...")
+            
+            variant_text = generate_single_variant(
+                brief_text, kb_context, vtype, letter,
+                revision_notes.get(letter, "")
+            )
+            
+            if variant_text:
+                all_variants.append(variant_text)
+                track_event("concept_generated", {"count": 1})
+                logger.info(f"  ✅ Variant {letter} generated ({len(variant_text)} chars)")
+            else:
+                logger.warning(f"  ❌ Variant {letter} failed")
+
+        if not all_variants:
+            logger.error("All variant generations failed")
+            continue
+
+        concepts = "\n\n---\n\n".join(all_variants)
+
+        # Judge each variant atomically too
+        update_pipeline(pipeline_id, "JUDGING", {"attempt": attempt})
+        scores = []
+        
+        for variant_text in all_variants:
+            judge_prompt = f"""STRICT Creative Director. Score 1-5 (3=avg). Return ONLY JSON object.
+Criteria: on_brief, platform_fit, scroll_stop_hook, brand_voice, trend_relevance, visual_clarity, german_quality, differentiation.
+
+{variant_text[:2000]}
+
+Return ONLY one JSON object: {{"variant":"A","title":"...","weighted_average":2.8,"verdict":"REVISE","one_line_summary":"...","red_flags":[]}}"""
+
+            judge_raw = call_claude_atomic(judge_prompt, timeout=60, retries=1)
+            if judge_raw:
+                judge_raw = re.sub(r'```json\s*', '', judge_raw)
+                judge_raw = re.sub(r'```\s*', '', judge_raw)
+                try:
+                    match = re.search(r'\{.*"verdict".*?\}', judge_raw, re.DOTALL)
+                    if match:
+                        score = json.loads(match.group())
+                        scores.append(score)
+                        v = score.get("variant", "?")
+                        avg = score.get("weighted_average", 0)
+                        verdict = score.get("verdict", "?")
+                        logger.info(f"  ⚖️ Variant {v}: {avg}/5 {verdict}")
+                        track_event("concept_scored", {"score": float(avg), "verdict": verdict})
+                except:
+                    logger.warning("Judge parse failed for a variant")
 
         best_concepts = concepts
         best_scores = scores
 
         # Check if all pass
-        all_pass = all(float(s.get("weighted_average", 0)) >= 3.0 for s in scores)
-        
-        if all_pass:
-            logger.info(f"All variants passed on attempt {attempt}")
+        if scores and all(float(s.get("weighted_average", 0)) >= 3.0 for s in scores):
+            logger.info(f"✅ All variants passed on attempt {attempt}")
             break
+
+        # Extract feedback for failing variants
+        for s in scores:
+            avg = float(s.get("weighted_average", 0))
+            if avg < 3.0:
+                v = s.get("variant", "?")
+                revision_notes[v] = s.get("one_line_summary", "Score too low")
+                track_event("quality_loop_retry")
         
-        # Extract feedback for retry
-        failing = [s for s in scores if float(s.get("weighted_average", 0)) < 3.0]
-        revision_feedback = "\n".join(
-            f"- Variant {s['variant']}: {s.get('weighted_average', 0)}/5 — {s.get('one_line_summary', '')}"
-            for s in failing
-        )
-        track_event("quality_loop_retry")
-        logger.info(f"Retrying: {len(failing)} variants below threshold")
+        logger.info(f"🔄 Retrying failing variants...")
 
     return {
         "concepts": best_concepts,
@@ -383,13 +387,19 @@ def process_approval(variant: str, concept_file: str, task_gid: str = "") -> dic
         
         result["steps"].append(f"🏗️ Producer triggered for Variant {variant}")
         result["producer_output"] = str(output_file)
-        # Producer generation happens via the calling agent (James)
-        # because Claude CLI has timeout issues with long prompts
         result["producer_trigger"] = {
             "concept_file": concept_file,
             "variant": variant,
             "output_file": str(output_file),
         }
+
+    # Add PRODUCER_COMPLETE comment to Asana when package is ready
+    if task_gid and result.get("producer_output"):
+        result["asana_producer_comment"] = (
+            f"[PRODUCER_COMPLETE] — Variant {variant} approved. "
+            f"Production package: {result['producer_output']}. "
+            f"Ready for Shoot. Move to 'Raw Footage Ready' when filmed."
+        )
 
     return result
 

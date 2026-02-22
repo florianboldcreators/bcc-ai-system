@@ -1,0 +1,16 @@
+{
+  "created": "2026-02-22T18:37:40.845122",
+  "concepts_generated": 0,
+  "concepts_passed": 0,
+  "concepts_revised": 0,
+  "concepts_rejected": 0,
+  "quality_loop_retries": 0,
+  "approvals": 0,
+  "golden_examples": 0,
+  "api_errors": 2,
+  "avg_score": 0,
+  "total_score_sum": 0,
+  "total_scored": 0,
+  "briefs_processed": 1,
+  "last_updated": "2026-02-22T18:43:40.904870"
+}

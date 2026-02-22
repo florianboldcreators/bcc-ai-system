@@ -1,0 +1,36 @@
+{
+  "pipelines": {
+    "mini-20260222-183734": {
+      "created": "2026-02-22T18:37:34.315389",
+      "history": [
+        {
+          "status": "NEW",
+          "timestamp": "2026-02-22T18:37:34.315392"
+        },
+        {
+          "status": "GENERATING",
+          "timestamp": "2026-02-22T18:37:40.844936"
+        },
+        {
+          "status": "GENERATING",
+          "timestamp": "2026-02-22T18:37:40.845462"
+        },
+        {
+          "status": "GENERATING",
+          "timestamp": "2026-02-22T18:40:40.862200"
+        },
+        {
+          "status": "GENERATING",
+          "timestamp": "2026-02-22T18:43:40.905800"
+        }
+      ],
+      "status": "GENERATING",
+      "updated": "2026-02-22T18:43:40.905794",
+      "client": "MINI",
+      "brief_file": "creative-lead/knowledge-base/raw_data/briefs/mini-cooper-spring-2026.md",
+      "brief_name": "mini-cooper-spring-2026",
+      "attempt": 3
+    }
+  },
+  "last_updated": "2026-02-22T18:43:40.905804"
+}
