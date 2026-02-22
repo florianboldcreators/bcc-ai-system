@@ -27,6 +27,59 @@ from pathlib import Path
 from dataclasses import dataclass, field
 from typing import Optional
 
+try:
+    from sentence_transformers import SentenceTransformer
+    import numpy as np
+    HAS_EMBEDDINGS = True
+except ImportError:
+    HAS_EMBEDDINGS = False
+
+# Lazy-loaded embedding model
+_model = None
+
+def get_embedding_model():
+    global _model
+    if _model is None and HAS_EMBEDDINGS:
+        _model = SentenceTransformer('all-MiniLM-L6-v2')
+    return _model
+
+
+def compute_differentiation_score(variant_texts: list[str]) -> tuple[float, str]:
+    """
+    Compute differentiation score using cosine similarity between variant pairs.
+    Rule: If any pair has cosine similarity > 0.80, variants are too similar → REVISE.
+    """
+    if not HAS_EMBEDDINGS:
+        return 7.0, "Embedding model not available — using placeholder score"
+    
+    if len(variant_texts) < 2:
+        return 5.0, "Only 1 variant — cannot compute differentiation"
+    
+    model = get_embedding_model()
+    embeddings = model.encode(variant_texts)
+    
+    # Compute pairwise cosine similarity
+    pairs = []
+    max_sim = 0.0
+    for i in range(len(embeddings)):
+        for j in range(i + 1, len(embeddings)):
+            sim = float(np.dot(embeddings[i], embeddings[j]) / 
+                       (np.linalg.norm(embeddings[i]) * np.linalg.norm(embeddings[j])))
+            label = f"{chr(65+i)} vs {chr(65+j)}"
+            pairs.append((label, sim))
+            max_sim = max(max_sim, sim)
+    
+    pair_info = ", ".join(f"{label}: {sim:.2f}" for label, sim in pairs)
+    
+    if max_sim > 0.80:
+        return 3.0, f"FAIL — Variants too similar! {pair_info}"
+    elif max_sim > 0.65:
+        score = 7.0 - (max_sim - 0.65) * 20  # Linear decay from 7 to 4
+        return max(4.0, score), f"Moderate similarity. {pair_info}"
+    else:
+        score = min(10.0, 7.0 + (0.65 - max_sim) * 10)
+        return score, f"Good differentiation. {pair_info}"
+
 
 @dataclass
 class ScoreResult:
@@ -250,10 +303,30 @@ def validate_file(filepath: str):
         result = validate_concept_text(section, label)
         results.append(result)
 
-    # Check cross-variant differentiation
+    # Check cross-variant differentiation with cosine similarity
     if len(results) < 3:
         for r in results:
             r.red_flags.append("fewer_than_3")
+
+    if len(variant_sections) >= 2:
+        diff_score, diff_notes = compute_differentiation_score(variant_sections)
+        for r in results:
+            # Replace the placeholder differentiation score
+            for s in r.scores:
+                if s.criterion == "Differentiation":
+                    s.score = diff_score
+                    s.notes = diff_notes
+            # Recalculate weighted average
+            r.weighted_avg = sum(s.score * s.weight for s in r.scores)
+            # Re-evaluate verdict
+            if r.red_flags:
+                r.verdict = "REVISE" if r.weighted_avg >= 5.0 else "REJECT"
+            elif r.weighted_avg >= 7.0:
+                r.verdict = "PASS"
+            elif r.weighted_avg >= 5.0:
+                r.verdict = "REVISE"
+            else:
+                r.verdict = "REJECT"
 
     print(f"\n🎯 BCC CREATIVE LEAD — CONCEPT VALIDATION REPORT")
     print(f"   File: {filepath}")
