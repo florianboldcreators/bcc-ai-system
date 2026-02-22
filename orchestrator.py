@@ -15,7 +15,8 @@ States:
     JUDGING      → Quality Loop running (generate → judge → retry)
     READY        → Concepts passed, awaiting CEO delivery
     DELIVERED    → Sent to CEO Telegram, awaiting feedback
-    APPROVED     → CEO approved, Producer triggered
+    APPROVED     → CEO approved, Producer + Ads triggered simultaneously
+    MEDIA_PLAN   → Ads Specialist generating media plan
     PRODUCING    → Producer generating package
     PRODUCED     → Package ready, awaiting footage
     EDITING      → Editor generating blueprint
@@ -441,6 +442,22 @@ def process_approval(variant: str, concept_file: str, task_gid: str = "") -> dic
             "output_file": str(output_file),
         }
 
+    # Trigger Ads Specialist (parallel to Producer)
+    ads_script = SCRIPT_DIR / "ads" / "main.py"
+    if ads_script.exists():
+        ads_output_dir = SCRIPT_DIR / "ads" / "test-output"
+        ads_output_dir.mkdir(parents=True, exist_ok=True)
+        safe_name = Path(concept_file).stem
+        ads_output = ads_output_dir / f"{safe_name}-var{variant}-media-plan.md"
+        
+        result["steps"].append(f"🎯 Ads Specialist triggered for Variant {variant}")
+        result["ads_output"] = str(ads_output)
+        result["ads_trigger"] = {
+            "concept_file": concept_file,
+            "variant": variant,
+            "output_file": str(ads_output),
+        }
+
     # Add PRODUCER_COMPLETE comment to Asana when package is ready
     if task_gid and result.get("producer_output"):
         result["asana_producer_comment"] = (
@@ -467,7 +484,7 @@ def show_status():
         emoji = {
             "NEW": "📥", "GENERATING": "📝", "JUDGING": "⚖️",
             "READY": "✅", "DELIVERED": "📨", "APPROVED": "👍",
-            "PRODUCING": "🏗️", "PRODUCED": "📦", "EDITING": "🎬",
+            "MEDIA_PLAN": "🎯", "PRODUCING": "🏗️", "PRODUCED": "📦", "EDITING": "🎬",
             "COMPLETE": "🏁", "FAILED": "❌",
         }.get(status, "❓")
         print(f"  {emoji} {pid} | {status} | {client} | {updated}")
