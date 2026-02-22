@@ -3,6 +3,17 @@
 ## Purpose
 Produce exactly 3 concept variants from the structured brief + selected trends.
 
+## Constraint Restatement (MANDATORY)
+
+Before writing ANY variant, you MUST explicitly list the 3 non-negotiable constraints from the brief:
+1. **Budget:** (e.g., €8k production)
+2. **Seasonality/Timing:** (e.g., Frühlings-Launch, EM 2026, Sommer-Push)
+3. **Key Message:** (e.g., "Elektro kann emotional sein")
+
+Every concept MUST demonstrably integrate ALL three constraints. If a concept works equally well in winter as in summer when the brief says "Frühling" — rewrite it. The seasonal/timing anchor must be VISIBLE in the visual direction, not just mentioned in a hashtag.
+
+---
+
 ## The Three Variants
 
 ### Variant A — Safe
