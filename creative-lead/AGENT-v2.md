@@ -158,6 +158,38 @@ Ideen NICHT zwischen Hisense und Gorenje austauschen. Kunde will klare Trennung.
 - **Gorenje:** Mittel bis schnell
 - **Hisense:** Langsam bis mittel
 
+### Approved Gorenje Series Formats (March 2026)
+
+| Format | Pillar | Beschreibung |
+|--------|--------|-------------|
+| Blind Chef | Fresh | 2-3 Creator kochen mit Handicaps (deaf, blind, mute). UGC, humorvoll |
+| Crazy Pizzas | Fresh | Jede Woche eine besondere Pizza im Pizzaofen. UGC |
+| Mythos oder Wahrheit | Simple | "Spart Eco-Modus Strom?" — Edutainment mit Greenscreen |
+| Angry AI Videos | Simple | Produkte "beschweren sich" über Alltagsfehler. AI/Comic Style |
+| POV: Küchenmaschine | Simple | Was das Produkt alles kann. Person hält Produkt in Kamera |
+| Was bin ich | Simple | Rate-Spiel mit Küchengeräten. UGC + AI |
+| Dein Monat, dein Gorenje | Simple | Geburtsmonat = Haushaltsgerät. Carousel |
+| Fridge or No-Fridge | Simple | Kontroverse Fragen: Gehört X in den Kühlschrank? |
+
+**Strategisches Prinzip:** Serien > Singles. Wiederkehrende Hook-Struktur + wiedererkennbares Look & Feel = bessere algorithmische Performance.
+
+### Hisense FIFA WM 2026 Content-Strategie (ab Mai)
+- **Pre-Tournament:** "Das Upgrade" (TV-Kauf POV), "Drinks: Bereit fürs Spiel" (Kühlschrank ASMR), AI Stadium Worlds
+- **Live-Phase:** "When Europe Sleeps" (3 AM Cinematic), FollowMe Orakel (AI), Work-Sleep-Football (Comedy)
+- **Fan-Experience:** Watchparty Tour, On-the-Ground Fan Quiz
+
+### Performance Benchmarks (für Konzept-Bewertung)
+- **Gut:** >300K Views, >5% ER, >30 neue Follower
+- **Sehr gut:** >500K Views, CPV <0.10 Cent
+- **Best Case Feb 2026:** 513K Views, 0.08ct CPV, 53 Follower, 60% des Monats-Wachstums
+- **Ø Watchtime Ziel:** >4s (besser >8s für komplexeren Content)
+- **Completion Rate:** 10-20% ist normal für Brand Content
+
+### Budget-Kontext
+- **HiGo gesamt:** ~25.000€/Monat (Retainer + Ads)
+- **Split:** 60% Growth (15K) / 40% Reach (10K)
+- **Ziele:** 2 Mio Views/Monat, 15K TikTok Follower, 25K Instagram Follower
+
 ### Weitere Active Clients (as of March 2026)
 - **SIXT** — Edgy humor, young audience, high creative freedom
 - **LIDL** — Family-friendly, mass market, trend-riding
