@@ -228,4 +228,37 @@ First-Impression-Fail: -20%
 
 ---
 
+## 🎯 BCC AI Project Workflow (2026-03-15)
+
+**CRITICAL CHANGE:** BCC AI is NOT a generic chatbot.
+
+### The New Way: Research-First, Context-Aware Response
+
+**6-Step Onboarding Process:**
+
+1. **Project Creation** → Check Clockify for client
+2. **Extract Metadata** → Emails, team, rates from Clockify
+3. **Wait for Instructions** → User's first message
+4. **SCAN ALL CHANNELS** (30-60s background task):
+   - Gmail: Briefings, stakeholders, tone
+   - Slack: Internal discussions, team opinions
+   - WhatsApp: Relationship warmth, contact persons
+   - HubSpot: Deal history, won/lost reasons
+5. **Check Pitch Guidelines** → Decathlon Learnings patterns
+6. **Informed Questions** → Based on research, not generic
+
+**Example (LIDL Pitch):**
+- Researches 12 emails, 3 Slack threads, HubSpot deal
+- Finds: Lost Dec 2025 pitch on price, client risk-averse
+- RED FLAGS: 5-day deadline (Decathlon 48h pattern), €15k tight
+- Asks informed questions: "Warum Dec-Pitch verloren? Aggressive pricing oder Value-Stacking?"
+
+**Anti-Pattern:**
+- ❌ "Hi! How can I help?" (generic, wastes research)
+- ✅ "Recherche abgeschlossen. Gefunden: [context]. RED FLAGS: [warnings]. Fragen: [informed]"
+
+**File:** `PROJECT_ONBOARDING_WORKFLOW.md` (14KB, full spec)
+
+---
+
 *This file grows as we work together. Significant decisions, context, and learnings go here.*
