@@ -798,5 +798,53 @@ Alternative:
 - `gemini-chat-additional-learnings.md` (MINI/Bitpanda, 13KB)
 - `gemini-chat-executive-summary.md` (TL;DR, 8KB)
 - `decathlon-learnings-actionable.md` (This File, Implementation Guide)
+- `decathlon-pitch-postmortem.md` (❌ Lost Pitch Analysis, 20KB)
 
 **Total:** 97 pages analyzed → 32 Patterns → Actionable in 4 weeks 🎩
+
+---
+
+## X. CRITICAL UPDATE: The Pitch Was Lost
+
+⚠️ **See `decathlon-pitch-postmortem.md` for full analysis.**
+
+**Key Learning:**
+> **Perfect Strategy ≠ Winning Pitch**
+
+Gemini optimized for:
+- ✅ Budget-Math (perfect)
+- ✅ Bewertungskriterien (covered)
+- ✅ CPA-Advantage (clear)
+- ✅ Strategic Framing (smart)
+
+**But Pitch was LOST because:**
+- ❌ KI-Visual-Fail (damaged first impression)
+- ❌ 48h-Timeline (insufficient polish)
+- ❌ Brand-Fit-Gap (Porsche → Decathlon)
+- ❌ Overconfidence ("Du holst dir den Etat!")
+- ❌ Missing Emotional-Impact-Check
+
+**New Rules for BCC AI:**
+
+1. **NEVER overconfident**
+   - ❌ "Damit holst du den Etat"
+   - ✅ "Strategy sound. Execution + Emotion entscheiden. Win-Chance: 40-60%"
+
+2. **Add Red-Team Review** (24h before pitch)
+   - Time-Check (<7d Prep = -30% Win)
+   - Brand-Fit-Assessment
+   - First-Impression-Quality (9/10 min)
+   - Emotional-Impact-Check
+   - Risk-Perception-Analysis
+
+3. **Strategy = 40%, Emotion = 60%**
+   - AI optimiert Rational
+   - Humans decide on Gut
+   - Flag wenn Emotional-Score <3/5
+
+**Read postmortem for:**
+- Why perfect strategy lost
+- Anti-Overconfidence protocol
+- Red-Team review checklist
+- Emotional-Impact module
+- Win-Probability formula
