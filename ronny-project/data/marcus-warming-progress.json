@@ -2,16 +2,24 @@
   "account": "marcus",
   "username": "@user4783749392230",
   "session_date": "2026-03-29",
-  "session_start": "00:24:00",
-  "videos_watched": 4,
-  "likes_given": 2,
-  "searches": ["bmw m4 drift", "porsche 911 sound"],
+  "session_number": 2,
+  "session_start": "01:00",
+  "videos_watched": 10,
+  "likes_given": 4,
+  "searches": [
+    "bmw m4 drift",
+    "porsche 911 sound",
+    "ferrari exhaust sound"
+  ],
   "content_consumed": [
     {"video": "BMW M4 Drift G80", "creator": "@sami.nami38", "liked": true},
     {"video": "BMW M4 Night Lovell Remix", "creator": "@trapremix_music", "liked": false},
     {"video": "Porsche 911 GT3 RS", "creator": "@mbncars44", "liked": true},
-    {"video": "Porsche GT3 Sound", "creator": "@reecescaptures", "liked": false}
+    {"video": "Porsche GT3 Sound 802K", "creator": "@reecescaptures", "liked": false},
+    {"video": "Ferrari 812 Superfast V12", "creator": "@drk072024", "liked": true, "views": "210.5K"},
+    {"video": "NOVITEC Ferrari 812 N-Largo", "creator": "@officialnovitec", "liked": false, "views": "913.6K"}
   ],
-  "algorithm_training": "cars/bmw/porsche/drift",
-  "status": "active"
+  "algorithm_training": "cars/bmw/porsche/ferrari/drift/v12/exhaust",
+  "status": "active",
+  "last_updated": "2026-03-29T01:10:00+01:00"
 }
