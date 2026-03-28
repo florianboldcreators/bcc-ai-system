@@ -1,0 +1,14 @@
+{
+  "tyler": {
+    "sessions": 1,
+    "last_session": "2026-03-28T22:56:21.829Z",
+    "total_likes": 2,
+    "total_videos": 7
+  },
+  "chloe": {
+    "sessions": 1,
+    "last_session": "2026-03-28T22:59:31.090Z",
+    "total_likes": 3,
+    "total_videos": 7
+  }
+}

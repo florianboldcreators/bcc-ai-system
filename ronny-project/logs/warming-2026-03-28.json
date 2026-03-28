@@ -1,0 +1,53 @@
+{
+  "sessions": [
+    {
+      "account": "tyler.westbrook94",
+      "time": "19:42",
+      "type": "manual",
+      "actions": ["search bmw m4", "watch 1 video", "like 1"],
+      "notes": "BMW M4 im Schnee liked"
+    },
+    {
+      "account": "tyler.westbrook94", 
+      "time": "19:55",
+      "type": "heartbeat",
+      "actions": ["scroll FYP", "watch 5 videos", "like 2", "follow 1"],
+      "likes": ["@lucablock_ BMW ASMR", "@acarfilmer Porsche GT3RS"],
+      "follows": ["@acarfilmer"],
+      "notes": "FYP zeigt car content, Algorithmus trainiert gut"
+    },
+    {
+      "account": "tyler.westbrook94", 
+      "time": "20:31",
+      "type": "manual",
+      "actions": ["scroll FYP", "like fahrschulemove", "search porsche 911", "follow @porsche", "like @raciety GT3RS"],
+      "likes": ["@fahrschulemove #autobahn", "@raciety Dark Porsche GT3RS (1.3M likes)"],
+      "follows": ["@porsche (official, 5M followers)"],
+      "notes": "Heavy Porsche training session"
+    },
+    {
+      "account": "tyler.westbrook94", 
+      "time": "21:05",
+      "type": "manual",
+      "actions": ["search bmw m3 drift", "like @nxe.media M3 Drifting (15.5K likes)"],
+      "likes": ["@nxe.media M3 Drifting 🔥🤩 (15.5K likes)"],
+      "follows": [],
+      "notes": "BMW M3 drift search training"
+    },
+    {
+      "account": "tyler.westbrook94", 
+      "time": "21:12",
+      "type": "heartbeat_evening",
+      "actions": ["FYP scroll", "like @swxft.404 Corvette (272K)", "like @alladinn.077 BMW M8 (500K)"],
+      "likes": ["@swxft.404 Corvette C6 (272.2K)", "@alladinn.077 BMW M8 (500.3K)"],
+      "follows": [],
+      "notes": "FYP zeigt 100% car content - Algorithm perfekt trainiert!"
+    }
+  ],
+  "summary": {
+    "total_videos_watched": 25,
+    "total_likes": 8,
+    "total_follows": 7,
+    "niche_signal": "cars/supercars/porsche/bmw/corvette/m8/drift"
+  }
+}

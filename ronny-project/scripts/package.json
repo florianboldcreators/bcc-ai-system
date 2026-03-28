@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "2captcha": "^3.0.5-2",
+    "gologin": "^2.2.8",
+    "playwright": "^1.58.2",
+    "puppeteer-core": "^24.40.0"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "updated": "2026-03-29T00:40:00+01:00",
+  "tiktok": {
+    "marcus": {
+      "username": "@user4783749392230",
+      "email": "marcus.reed.1991@proton.me",
+      "status": "ACTIVE",
+      "logged_in_browser": "main (port 18800)",
+      "warming_status": "active",
+      "last_session": "2026-03-29 00:27",
+      "videos_watched": 4,
+      "likes_given": 2,
+      "algorithm": "cars/bmw/porsche/drift"
+    },
+    "tyler": {
+      "username": "@tyler.westbrook94",
+      "display_name": "Tyty1994",
+      "email": "tylerwestbrook94@proton.me",
+      "status": "EXISTS",
+      "logged_in_browser": "NONE",
+      "warming_status": "blocked - needs manual login in GoLogin",
+      "gologin_profile": "69c2370f15ad6c33e2e4dd0a"
+    },
+    "chloe": {
+      "username": "@kimvirginiaaah._",
+      "email": "chloemarie.santos@proton.me",
+      "status": "EXISTS",
+      "logged_in_browser": "NONE",
+      "warming_status": "blocked - needs manual login in GoLogin",
+      "gologin_profile": "69c23716ac926b95f05793a9"
+    },
+    "sophia": {
+      "username": "@user4148459812842",
+      "email": "sophiakimx@proton.me",
+      "status": "EXISTS",
+      "logged_in_browser": "NONE",
+      "warming_status": "blocked - needs manual login in GoLogin",
+      "gologin_profile": "69c237114f7abb90b3b43fd2"
+    }
+  },
+  "instagram": {
+    "alex": {
+      "username": "@alexrivers2026",
+      "display_name": "Alex Rivers",
+      "status": "ACTIVE",
+      "logged_in_browser": "main (port 18800)",
+      "warming_status": "ready",
+      "posts": 0,
+      "followers": 0,
+      "following": 0
+    },
+    "emma": {
+      "username": "@emma_wilson2282",
+      "display_name": "Emma Wilson",
+      "status": "EXISTS",
+      "logged_in_browser": "NONE",
+      "warming_status": "blocked - needs login",
+      "posts": 0,
+      "followers": 0,
+      "following": 0
+    },
+    "jake": {
+      "username": "@jakemiller3fa4fe64",
+      "status": "UNKNOWN",
+      "warming_status": "not tested"
+    }
+  },
+  "summary": {
+    "total_accounts": 7,
+    "fully_active": 2,
+    "need_login": 5,
+    "active_tiktok": ["marcus"],
+    "active_instagram": ["alex"]
+  }
+}

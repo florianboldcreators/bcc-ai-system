@@ -1,0 +1,17 @@
+{
+  "account": "marcus",
+  "username": "@user4783749392230",
+  "session_date": "2026-03-29",
+  "session_start": "00:24:00",
+  "videos_watched": 4,
+  "likes_given": 2,
+  "searches": ["bmw m4 drift", "porsche 911 sound"],
+  "content_consumed": [
+    {"video": "BMW M4 Drift G80", "creator": "@sami.nami38", "liked": true},
+    {"video": "BMW M4 Night Lovell Remix", "creator": "@trapremix_music", "liked": false},
+    {"video": "Porsche 911 GT3 RS", "creator": "@mbncars44", "liked": true},
+    {"video": "Porsche GT3 Sound", "creator": "@reecescaptures", "liked": false}
+  ],
+  "algorithm_training": "cars/bmw/porsche/drift",
+  "status": "active"
+}

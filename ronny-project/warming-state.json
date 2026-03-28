@@ -1,0 +1,16 @@
+{
+  "tyler.westbrook94": {
+    "created": "2026-03-28",
+    "lastWarming": "2026-03-28T19:15:00",
+    "totalSessions": 2,
+    "totalVideos": 20,
+    "totalLikes": 4,
+    "totalFollows": 1,
+    "followsToday": 1,
+    "lastFollowDate": "2026-03-28",
+    "accountsFollowed": ["g82.andres"],
+    "algorithmStatus": "trained",
+    "contentFocus": ["cars", "racing", "bmw", "drift", "autobahn", "gran_turismo"],
+    "notes": "Algorithmus zeigt bereits Car-Content. Phone-Verknüpfung morgen (24h Wartezeit)."
+  }
+}
