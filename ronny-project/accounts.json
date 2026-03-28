@@ -1,0 +1,68 @@
+{
+  "accounts": [
+    {
+      "id": 1,
+      "username": "tyler.westbrook94",
+      "email": "tylerwestbrook94@proton.me",
+      "password": "Tw_Secure94!",
+      "dob": "1994-03-14",
+      "phone": "+1 216-584-3109",
+      "status": "active",
+      "proxy": "CA (port 18082)",
+      "gologin_profile": null,
+      "created": "2026-03-28",
+      "warming_crons": ["tyler-warming-morning", "tyler-warming-afternoon", "tyler-warming-evening"],
+      "notes": "First account, logged in via main browser"
+    },
+    {
+      "id": 2,
+      "username": "kimvirginiaaah._",
+      "email": "chloemarie.santos@proton.me",
+      "password": "Cm_Secure88!",
+      "dob": "1988-05-22",
+      "phone": null,
+      "status": "active",
+      "proxy": "chris-taylor-tiktok GoLogin (port 29732)",
+      "gologin_profile": "69c23716ac926b95f05793a9",
+      "created": "2026-03-28",
+      "warming_crons": [],
+      "notes": "Created manually by Florian. TikTok username: @kimvirginiaaah._"
+    },
+    {
+      "id": 3,
+      "username": "user4783749392230",
+      "email": "marcus.reed.1991@proton.me",
+      "password": "Mr_Secure91!",
+      "dob": "1991-07-04",
+      "phone": null,
+      "status": "active",
+      "proxy": "normal Chrome",
+      "gologin_profile": null,
+      "created": "2026-03-28",
+      "warming_crons": [],
+      "notes": "Marcus Reed. Brandon banned - replaced with Marcus. Recovery: joachim.kohlfeld@gmail.com"
+    },
+    {
+      "id": 4,
+      "username": "user4148459812842",
+      "email": "sophiakimx@proton.me",
+      "password": "Sk_Secure99!",
+      "dob": "1999-11-03",
+      "phone": null,
+      "status": "active",
+      "proxy": "incognito Chrome",
+      "gologin_profile": null,
+      "created": "2026-03-28",
+      "warming_crons": [],
+      "notes": "Created manually by Florian in incognito. Session 1 warming done manually."
+    }
+  ],
+  "security_rules": {
+    "no_shared_emails": true,
+    "no_shared_ips": true,
+    "unique_fingerprints": "GoLogin profiles",
+    "unique_proxies": "IPRoyal sticky sessions",
+    "no_boldcreators_domain": true,
+    "warming_delays": "human-like randomized"
+  }
+}
