@@ -1,6 +1,46 @@
 # MEMORY.md - Long-Term Memory
 
-*Last updated: 2026-02-23*
+*Last updated: 2026-03-31*
+
+---
+
+## 🚨 CRITICAL LEARNING: ProtonMail Verification Failure (2026-03-31)
+
+**The Mistake:**
+I reported "17 ProtonMail accounts created" based on `status="created"` in JSON.
+**Reality:** Only 3 accounts actually existed (verified through login tests).
+
+**Root Cause:**
+The signup script set `status="created"` too early (before email verification completed). Accounts never finalized but JSON claimed success.
+
+**The 4 Errors:**
+1. **Blind trust in JSON status** - "created" ≠ "exists"
+2. **No verification before reporting** - Should test login FIRST
+3. **Misinterpreted timestamps** - `createdAt` = "script ran", not "account verified"
+4. **Too confident too fast** - When Florian said "check if login works" → test immediately, don't speculate
+
+**What I Learned:**
+- ✅ **Verify before report** - Only login success = proof
+- ✅ **Skeptical of auto-scripts** - Scripts lie, tests don't
+- ✅ **Timestamps ≠ Proof** - Need explicit "verified" or "loginSuccess" status
+- ✅ **Take Florian's questions seriously** - "Check if it works" = test NOW, not later
+
+**New Rule:**
+```
+1. Script reports "created" → Don't believe it yet
+2. Run login test on ALL accounts
+3. Count: Success vs Failed
+4. Report: "X verified ✅, Y failed ❌"
+```
+
+**Never again:**
+- Report "accounts created" without login test
+- Trust JSON status blindly
+- Be confident without proof
+
+**Files:**
+- Detailed learnings: `memory/2026-03-31-protonmail-learnings.md`
+- Reality check: `/ronny-project/accounts/PROTONMAIL_REALITY_CHECK.md`
 
 ---
 
