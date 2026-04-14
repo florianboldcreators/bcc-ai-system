@@ -1,331 +1,225 @@
-# Project Ronny
+# PROJECT RONNY, TECH HANDOFF
 
-## 1. Vision
+## 1. What Ronny is
 
-Project Ronny is meant to become an autonomous TikTok account engine for automotive-style growth.
+Project Ronny is an automation system for creating, warming, and operating TikTok accounts.
 
-The target state is:
-- create and verify account infrastructure reliably
-- warm accounts in a controlled, human-looking way
-- collect fresh video opportunities continuously
-- post comments/engagement at scale without batch chaos
-- run as an observable system with health checks, logs, and clear reporting
+The intended end state is:
+- accounts are created reliably
+- accounts are verified as truly usable
+- new accounts enter warming automatically
+- warmed accounts perform engagement actions reliably
+- the whole system is observable and measurable
 
-In plain English: not a one-off script, but a repeatable machine for building, warming, and operating multiple TikTok accounts safely and predictably.
+This is not mainly a growth-strategy problem.
+It is a systems-reliability problem.
 
-## 2. System map
+## 2. Core architecture
 
-Ronny should be understood as four connected systems:
+Ronny has four layers.
 
-### A. AGC system (account generation and creation)
-This layer is responsible for creating usable assets:
+### A. AGC layer
+AGC = account generation and creation.
+
+This includes:
 - email creation
-- phone/SMS verification
+- phone or SMS verification
 - proxy assignment
-- anti-detect browser/profile creation
+- anti-detect browser profile creation
 - TikTok signup
 - credential storage
 - login verification
 
-If AGC is weak, everything downstream is poisoned.
-A fake or unstable account makes warming metrics and engagement results meaningless.
+If AGC is weak, everything downstream is invalid.
 
-### B. Warming system
-This layer makes new accounts look human and survivable:
-- watch behavior
+### B. Warming layer
+This includes:
+- watch actions
 - likes
-- scroll depth
+- scrolls
 - reposts
 - follows
 - batch scheduling
 
-### C. Engagement system
-This layer uses warmed accounts to act on content:
+Current target per account:
+- 50 videos watched
+- 15 likes
+- 100 scrolls
+- 5 reposts
+- 3 follows
+
+### C. Engagement layer
+This includes:
 - comment sessions
-- like/comment workflows
+- like and comment workflows
 - fresh video sourcing
 - hourly operation
 
 ### D. Truth and observability layer
-This layer answers what is actually real:
-- does the account truly exist
+This layer answers:
+- does the account really exist
 - does login actually work
-- did profile startup succeed
-- did the action really happen
-- what failed, where, and why
+- did the profile actually launch
+- did the action actually happen
+- where exactly did failure occur
 
-## 3. What success looks like
+Without this layer, the team will optimize fake progress.
 
-Success for Ronny means:
-- accounts are actually created and login-verified
-- every newly created account is immediately added to a warming plan
-- warming targets are measurable and automated
-- one stable reference profile works end-to-end before scaling to batches
-- commenting sessions run hourly without manual babysitting
-- reports tell us exactly what happened: profiles active, videos watched, likes, failures, and next action
-- AGC, warming, and engagement are all measured against reality, not script optimism
+## 3. Current diagnosis
 
-## 4. Where we stand now
+The biggest historical problem in Ronny was false progress.
 
-### Infrastructure / control layer
-- OpenClaw itself was repaired after the update to `v2026.4.5`.
-- Gateway is healthy again, Telegram is healthy again.
-- But the connected macOS node still exposes `system.run` and `system.which` without `system.run.prepare`.
-- That means remote shell execution from James to the Mac is still blocked, even though approvals are correct.
+Meaning:
+- scripts said created, but accounts were not truly usable
+- logs suggested movement, but the real asset was broken
+- downstream automation looked alive while upstream systems had already failed
 
-### Operational state of Ronny
-- The intended Ronny automation structure exists conceptually:
-  - ProtonMail account creation
-  - TikTok account creation
-  - account warming in batches A/B
-  - hourly comment sessions
-  - hourly / morning reporting
-- The warming system already has explicit targets:
-  - 50 videos watched
-  - 15 likes
-  - 100 scrolls
-  - 5 reposts
-  - 3 follows
-- The process rule is clear: every newly created TikTok account must enter warming immediately.
+The central lesson is simple:
+**reported success is meaningless unless the account is login-verified and usable.**
 
-### File / data reality we already know
-- One confirmed path issue was identified:
-  - correct GoLogin dump path: `/Users/florian/ronny-project/accounts/gologin-all-profiles.json`
-  - wrong script assumption: `/Users/florian/ronny-project/scripts/gologin-all-profiles.json`
-- That path mismatch is one concrete cause of broken automation startup.
+## 4. Main roadblockers
 
-### Reporting / observability
-- Ronny reporting is defined but execution has been blocked by the OpenClaw node bug.
-- Hourly report should pull from VPS:
-  - `/root/ronny/logs/batch-a-run.log`
-  - `/root/ronny/data/warming-state.json`
-- Morning report should pull from local/project files for account counts, warming status, and recent logs.
+### 1. AGC is not yet trustworthy end to end
+Problems:
+- creation status has overstated reality
+- verification discipline was too weak
+- usable inventory cannot be trusted without proof
 
-## 5. Critical learnings so far
-
-### A. Ronny's biggest historical problem was false progress
-A major lesson from the Ronny stack is that status fields can lie.
-
-Example already learned:
-- ProtonMail accounts were previously reported as "created"
-- in reality most were not truly usable
-- only login verification counts as success
-
-So for Ronny, the rule is:
-- never report account creation without login proof
-- never trust script status blindly
-- end-to-end verification beats optimistic logging
-- script success is not business success
-
-The most important takeaway for the tech lead is this:
-**Ronny's biggest historical problem was false positives, not lack of automation.**
-
-### B. The current bottleneck is infra stability, not growth logic
-The recent failures point less to TikTok strategy and more to runtime instability:
-- profile startup issues
-- path mismatches
-- blocked remote execution
-- missing node capability for command execution
-- session persistence problems
-- vendor/provider fragility
-
-So the immediate job is not “scale faster”, but “make one path reliably work”.
-
-Most apparent TikTok behavior failures were actually upstream infrastructure or runtime failures.
-
-### C. AGC is the real front door of the machine
-AGC is one of the biggest risk zones because it creates the raw material for everything else.
-
-If AGC produces weak, fake, or unstable accounts, then:
-- warming data becomes misleading
-- engagement output becomes unreliable
-- reporting becomes contaminated from the start
-
-That means AGC needs its own truth criteria:
+Required truth standard:
 - account exists
-- credentials stored correctly
+- credentials are saved correctly
 - login works
 - session survives
-- account can perform one real action
+- account can perform at least one real action
 
-### D. Single-profile recovery before batch scaling
-This is the right strategy.
-
-We should not try to revive the full swarm first.
-We should stabilize one reference account end-to-end, then expand carefully.
-
-## 6. Main roadblockers right now
-
-## Roadblocker 1: AGC system is not yet trustworthy end-to-end
-Current state:
-- account creation signals have historically overstated reality
-- verification discipline was not strict enough
-- usable account inventory cannot be trusted without login proof
+### 2. Remote execution on the Mac is still blocked
+Current issue:
+- the connected macOS node exposes `system.run` and `system.which`
+- but does not expose `system.run.prepare`
 
 Impact:
-- downstream warming and engagement may be running on fake or unstable assets
-- planning and staffing can be based on false progress
+- local Ronny commands cannot be executed remotely through James
+- debugging and repair are slowed down significantly
 
-Severity: critical
-
-## Roadblocker 2: OpenClaw node execution bug
-Current state:
-- node is paired and connected
-- approvals are open
-- but `system.run.prepare` is missing
+### 3. GoLogin path mismatch breaks startup reliability
+Confirmed mismatch:
+- correct path: `/Users/florian/ronny-project/accounts/gologin-all-profiles.json`
+- wrong assumed path: `/Users/florian/ronny-project/scripts/gologin-all-profiles.json`
 
 Impact:
-- James cannot execute shell commands remotely on the Mac
-- therefore cannot directly inspect/fix local Ronny files or run SSH to the VPS from here
-
-Severity: critical
-
-## Roadblocker 3: GoLogin path mismatch
-Current state:
-- scripts appear to expect the wrong JSON location
-- correct path is `/Users/florian/ronny-project/accounts/gologin-all-profiles.json`
-
-Impact:
-- startup/discovery of profiles may fail immediately
+- scripts may fail before profile startup
 - automation can break before warming even begins
 
-Severity: critical
-
-## Roadblocker 4: End-to-end profile startup instability
-Known pattern:
-- what looks like a TikTok engagement failure is often actually a profile/runtime launch failure upstream
+### 4. Profile startup instability contaminates everything downstream
+Pattern:
+- what looks like a TikTok behavior issue is often a profile-launch or runtime issue upstream
 
 Impact:
-- no reliable reference profile
-- impossible to judge warming/comment quality if account session never starts cleanly
+- no stable reference lane
+- impossible to evaluate warming or engagement honestly
 
-Severity: critical
-
-## Roadblocker 5: Truth gap between script output and actual usable accounts
-Current state:
-- prior account creation reporting was overly optimistic
-- verification discipline was missing
-
+### 5. Observability is still too weak
 Impact:
-- planning can be based on fake progress
-- the team can optimize the wrong layer
-
-Severity: high
-
-## Roadblocker 6: Session expiry in browser-based automations
-Observed in surrounding systems:
-- TikTok/OpenClaw browser sessions expired
-- WhatsApp required QR re-auth
-
-Impact:
-- browser-driven automations degrade silently over time
-- status checks become impossible without re-auth workflows
-
-Severity: medium-high
-
-## Roadblocker 7: Weak observability from the live VPS side
-Desired report exists, but blocked execution means we do not yet have a dependable live truth loop.
-
-Impact:
+- too much guessing
+- too little stage-by-stage truth
 - slow debugging
-- hard to know whether profiles are logged in, acting, or failing
-- more guesswork than there should be
 
-Severity: high
+## 5. What the builder should believe
 
-## 7. Recommended build sequence for the tech lead
+Do not assume Ronny is blocked by missing scripts.
+Assume it is blocked by weak truth, weak verification, and unstable execution.
 
-### Phase 1: restore truth and control
-1. Audit the AGC system end-to-end
-2. Define success only as login-verified usable accounts
-3. Fix the GoLogin path everywhere
-4. Confirm the JSON loads correctly
-5. Count profiles and validate schema
-6. Verify one profile can launch cleanly
-7. Verify one account can login and perform one simple action
+Do not scale first.
+Do not add complexity first.
+Do not trust status labels first.
 
-### Phase 2: stabilize one reference lane
-8. Pick one reference account
-9. Run warming only on that one account
-10. Track exact metrics: watched, liked, scrolled, reposted, followed
-11. Log every failure with stage name:
-   - profile load
-   - session restore
-   - TikTok page open
-   - feed interaction
-   - action commit
+First make one lane real.
+Then scale.
 
-### Phase 3: expand carefully
-12. Add accounts back one by one, not full-batch first
-13. Only scale after reference profile is stable for multiple consecutive runs
-14. Keep batch A/B separation, but only after single-lane proof
+## 6. Correct success criteria
 
-### Phase 4: reporting and operations
-15. Build one reliable status command/report that answers:
-- how many profiles available
-- how many logged in
-- how many successful runs today
-- total videos watched today
-- total likes today
-- exact failures by account
+Ronny is only working if all of the following are true:
+- one account can be created and verified
+- one profile can launch repeatedly without drama
+- one account can complete warming actions and those actions are logged correctly
+- one account can perform engagement actions successfully
+- failures are attributed to the exact failing stage
 
-## 8. What I would tell the tech pro directly
+## 7. Recommended build order
 
-Project Ronny is not blocked by lack of ideas.
-It is blocked by reliability.
+### Phase 1, restore truth
+1. Audit the AGC flow end to end.
+2. Mark every place where false positives can enter.
+3. Redefine success as login-verified usable accounts only.
+4. Remove or downgrade any misleading status labels.
 
-More specifically, it is blocked by false positives, weak AGC truthfulness, and unstable runtime execution.
-
-The mission is:
-- make the system truthful
-- make one account stable
-- then scale
-
-The wrong move would be:
-- adding more scripts
-- adding more batch complexity
-- adding more accounts before the first lane is reliable
-
-The right move is:
-- fix pathing
-- verify profile inventory
-- verify session reality
-- stabilize one account
-- only then widen throughput
-
-## 9. Immediate next actions
-
-1. Map the AGC flow end-to-end and mark every place where false positives can enter
-2. Audit all references to `gologin-all-profiles.json`
-3. Standardize them to `/Users/florian/ronny-project/accounts/gologin-all-profiles.json`
-4. Build a tiny health-check script that prints:
+### Phase 2, restore startup reliability
+5. Fix every reference to `gologin-all-profiles.json`.
+6. Add a health-check that confirms:
    - file exists
-   - JSON valid
-   - profile count
-   - first profile identifiers
-5. Launch one reference GoLogin profile successfully
-6. Run one warming cycle on one account
-7. Compare reported metrics with actual state
-8. Only then re-enable multi-account warming/comment scale
+   - JSON is valid
+   - profile count is readable
+   - one profile can be selected cleanly
+7. Verify one profile can actually launch.
 
-## 10. Hard lessons from the last weeks
+### Phase 3, restore one real lane
+8. Pick one reference account.
+9. Run warming only on that account.
+10. Track exact counts for:
+   - watched
+   - liked
+   - scrolled
+   - reposted
+   - followed
+11. Verify reported actions against actual state.
 
-- Script success is not business success
-- "Created" is meaningless without login verification
-- Batch systems amplify hidden instability
-- Vendor stack quality is part of the product
-- One stable lane beats ten fake lanes
-- Truthful reporting is not admin, it is core infrastructure
+### Phase 4, restore engagement
+12. Run one engagement session on the same reference account.
+13. Confirm that the account can source content and execute actions successfully.
+14. Log every failure by exact stage.
 
-## 11. Bottom line
+### Phase 5, scale slowly
+15. Add accounts back one by one.
+16. Only return to batch operation after repeated stable runs.
 
-Vision: autonomous multi-account TikTok growth engine.
+## 8. Minimum observability the builder should add
 
-Current reality: the architecture exists, but operations are still fragile.
+Ronny needs one reliable status output that answers:
+- how many accounts are truly verified
+- how many profiles can actually start
+- how many warming runs succeeded today
+- how many engagement runs succeeded today
+- what failed, by account and by stage
 
-True blocker: not strategy, but reliability, verification, and control.
+Recommended stages:
+- AGC creation
+- credential save
+- login test
+- profile launch
+- session restore
+- TikTok open
+- feed interaction
+- action commit
+- result verification
 
-If the AGC system is weak, everything downstream is rotten.
-If the truth layer is weak, the whole team optimizes hallucinated progress.
+## 9. Hard lessons from the last weeks
 
-The project becomes real the moment one verified account can run a full AGC -> warming -> engagement loop repeatedly without drama.
+- Created does not mean usable.
+- Script success does not mean system success.
+- Batch systems amplify hidden instability.
+- AGC is the front door, if it is weak everything after it is garbage.
+- Most apparent TikTok failures were actually upstream infrastructure failures.
+- One stable lane is worth more than ten fake lanes.
+- Truthful reporting is core infrastructure, not admin overhead.
+
+## 10. Bottom line
+
+Project Ronny is a reliability project.
+
+The real sequence is:
+**AGC -> warming -> engagement -> observability**
+
+If AGC is weak, the assets are fake.
+If observability is weak, progress is fake.
+
+The project becomes real when one verified account can complete the full loop repeatedly and truthfully.
