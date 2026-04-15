@@ -1,11 +1,25 @@
-# PROJECT RONNY, 24H TECH UPDATE
+# PROJECT RONNY, 24H TECH UPDATE FOR APRIL 14, 2026
+
+## Executive summary
+On **April 14, 2026**, the most important technical outcome was restoring Ronny to a truthful, stable **9/9 green** baseline.
+
+In one line:
+- **infrastructure and state truth were significantly repaired, but comment automation remained unresolved**
+
+What mattered most on April 14:
+- GoLogin startup reliability was fixed
+- the real VPS warming worker was hardened and deployed
+- overlapping batch chaos was controlled with a single-run lock
+- persisted state truth was cleaned up and reconciled against proof runs
+- the last problematic profiles were recovered, bringing Ronny back to **9/9 green**
+- the comment-like and `comment_id` extraction mission did **not** succeed
 
 ## Scope
-This handover covers the last 24 hours only.
+This handover covers the work completed on **April 14, 2026** and the immediate overnight aftermath.
 It focuses on what was fixed, what was proven, what still blocked progress, and what the next tech owner should know.
 
 ## 1. Executive summary
-The real win of the last 24 hours was not comment automation.
+The real win of April 14 was not comment automation.
 The real win was restoring Ronny to a truthful, stable **9/9 green** baseline.
 
 What changed:
